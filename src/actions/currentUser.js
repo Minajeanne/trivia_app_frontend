@@ -14,7 +14,6 @@ export const clearCurrentUser = () => {
 
 // asynchronous action creators
 export const login = (credentials, history) => {
-  // console.log("credentials are", credentials)
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/login", {
       method: "POST",
