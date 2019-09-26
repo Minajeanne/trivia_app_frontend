@@ -38,5 +38,5 @@ const mapStateToProps = state => {
   })
 }
 
-// add back in: export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
+// export default connect(mapStateToProps, { getCurrentUser })(App);
