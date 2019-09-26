@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/Login.js';
 import Home from './components/Home.js';
 import NavBar from './components/NavBar.js';
+import Signup from './components/Signup.js'
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import { Route, Switch, withRouter } from 'react-router-dom';
@@ -23,6 +24,7 @@ class App extends React.Component {
       <div className="App">
        { loggedIn ? <NavBar location={this.props.location}/> : <Home/> }
         <Switch>
+          <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
           <Route exact path='/login' component={Login}/>
 
         </Switch>
