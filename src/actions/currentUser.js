@@ -1,5 +1,5 @@
-// import { resetLoginForm } from "./loginForm.js"
-// import { resetSignupForm } from "./signupForm.js"
+import { resetLoginForm } from "./loginForm.js"
+import { resetSignupForm } from "./signupForm.js"
 // import { getMyTrips, clearTrips } from "./myTrips.js"
 
 // synchronous action creators
