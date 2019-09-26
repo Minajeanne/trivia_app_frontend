@@ -7,7 +7,6 @@ const Home = () => (
       <Link to="/login">Log In</Link> or <Link to="/signup">Sign Up</Link>
     </span>
   </div>
-
 );
 
 export default Home;

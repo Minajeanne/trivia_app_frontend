@@ -35,7 +35,7 @@ export const login = (credentials, history) => {
           dispatch(setCurrentUser(response.data))
           // figure out what to add here **
           // dispatch(getMyTrips())
-          // dispatch(resetLoginForm())
+          dispatch(resetLoginForm())
           history.push('/')
         }
       })
