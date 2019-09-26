@@ -21,4 +21,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(MyGames)
+export default connect(mapStateToProps)(MyGames);

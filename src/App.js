@@ -3,7 +3,8 @@ import './App.css';
 import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
-import Signup from './components/Signup.js'
+import Signup from './components/Signup.js';
+import MyGames from './components/MyGames.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import { Route, Switch, withRouter } from 'react-router-dom';
@@ -36,7 +37,7 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
-    // games: state.myGames
+    games: state.myGames
   })
 }
 
