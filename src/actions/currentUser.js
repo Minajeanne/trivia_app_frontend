@@ -43,6 +43,17 @@ export const login = (credentials, history) => {
   }
 }
 
+export const logout = event => {
+  return dispatch => {
+    dispatch(clearCurrentUser())
+    // dispatch(clearGames())
+    return fetch('http://localhost:3001/api/v1/logout', {
+      credentials: "include",
+      method: "DELETE"
+    })
+  }
+}
+
 export const getCurrentUser = () => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/get_current_user", {
