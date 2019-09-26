@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import Login from './components/Login.js';
 import Home from './components/Home.js';
+// import NavBar from './components/NavBar.js'
 import { connect } from 'react-redux';
-import { getCurrentUser } from "./actions/currentUser.js";
+import { getCurrentUser } from './actions/currentUser.js';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 class App extends React.Component {
@@ -17,12 +18,14 @@ class App extends React.Component {
   //   .then(console.log)
   // }
   render() {
+    const { loggedIn, games } = this.props
     return (
       <div className="App">
-        <header className="App-header">
-          <Home />
-          <Login />
-        </header>
+        
+        <Switch>
+          <Route exact path='/login' component={Login}/>
+
+        </Switch>
       </div>
     );
   }

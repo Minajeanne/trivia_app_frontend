@@ -1,3 +1,7 @@
+// import { resetLoginForm } from "./loginForm.js"
+// import { resetSignupForm } from "./signupForm.js"
+// import { getMyTrips, clearTrips } from "./myTrips.js"
+
 // synchronous action creators
 export const setCurrentUser = user => {
   return {
@@ -16,6 +20,7 @@ export const clearCurrentUser = () => {
 export const login = (credentials, history) => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/login", {
+      credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"
