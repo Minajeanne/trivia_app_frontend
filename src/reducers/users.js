@@ -1,8 +1,5 @@
 export default (state = [], action) => {
-  switch (action.type) {
-    // case expression:
-
-      
+  switch (action.type) {  
     default:
       return state;
   }
