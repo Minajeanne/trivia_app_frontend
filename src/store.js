@@ -3,14 +3,17 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import currentUser from './reducers/currentUser.js';
 import loginForm from './reducers/loginForm.js';
 import signupForm from './reducers/signupForm.js';
-// add myStats
+import myStats from './reducers/myStats.js';
+import questions from './reducers/questions.js';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const reducer = combineReducers({
   currentUser,
   loginForm,
-  signupForm
+  signupForm,
+  myStats,
+  questions
   // add myStats
 })
 

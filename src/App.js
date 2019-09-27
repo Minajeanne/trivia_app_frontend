@@ -5,6 +5,8 @@ import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import MyGames from './components/MyGames.js';
+import Questions from './components/Questions.js';
+import GameContainer from './components/GameContainer.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import { Route, Switch, withRouter } from 'react-router-dom';
@@ -27,7 +29,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
           <Route exact path='/login' component={Login}/>
-
+          <Route exact path='/games/new' component={GameContainer}/>
         </Switch>
       </div>
     );
@@ -37,7 +39,7 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
-    games: state.myGames
+    stats: state.myStats
   })
 }
 
