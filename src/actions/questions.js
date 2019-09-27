@@ -12,7 +12,7 @@ export const fetchQuestions = () => {
         if (response.error) {
           alert(response.error)
         } else {
-          // dispatch(setMyTrips(response.data))
+          dispatch(fetchQuestions(response.data))
           history.push(`/questions`)
         }
       })

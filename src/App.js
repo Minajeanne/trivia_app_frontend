@@ -4,7 +4,7 @@ import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
-import MyGames from './components/MyGames.js';
+import MyStats from './components/MyStats.js';
 import Questions from './components/Questions.js';
 import GameContainer from './components/GameContainer.js';
 import { connect } from 'react-redux';
