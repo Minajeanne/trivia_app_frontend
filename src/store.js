@@ -14,7 +14,7 @@ const reducer = combineReducers({
   signupForm,
   myStats,
   questions
-  // add myStats
+
 })
 
 // const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE || compose;

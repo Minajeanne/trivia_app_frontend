@@ -29,6 +29,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
           <Route exact path='/login' component={Login}/>
+          <Route exact path='/stats' component={MyStats}/>
           <Route exact path='/games/new' component={GameContainer}/>
         </Switch>
       </div>
