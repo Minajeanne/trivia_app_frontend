@@ -3,6 +3,7 @@ import users from './reducers/users.js';
 import currentUser from './reducers/currentUser.js';
 import loginForm from './reducers/loginForm.js';
 import signupForm from './reducers/signupForm.js';
+// add myStats
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -11,6 +12,7 @@ const reducer = combineReducers({
   currentUser,
   loginForm,
   signupForm
+  // add myStats
 })
 
 // const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE || compose;
