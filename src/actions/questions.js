@@ -1,21 +1,22 @@
 export const fetchQuestions = () => {
+  // console.log("Pulling next question...")
+  // debugger
   return dispatch => {
-    return fetch("https://opentdb.com/api.php?amount=50&type=multiple", {
-      credentials: "include",
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
+    // dispatch({ type: 'FETCH_QUESTIONS' })
+    return fetch("https://opentdb.com/api.php?amount=30", {
+      // credentials: "include",
+      // method: "GET",
+      // headers: {
+      //   "Content-Type": "application/json"
+      // },
     })
       .then(r => r.json())
-      .then(response => {
-        if (response.error) {
-          alert(response.error)
-        } else {
-          dispatch(fetchQuestions(response.data))
-          history.push(`/questions`)
+      .then(fetchedQuestions => {
+        console.log('Your next question is:', fetchedQuestions)
+          dispatch({ type: 'FETCH_QUESTIONS', fetchedQuestions})
+          // history.push(`/questions`)
         }
-      })
+      )
       .catch(console.log)
   }
 }
