@@ -20,22 +20,24 @@ class GameContainer extends React.Component {
     userAnswer: ''
   }
 
+  nextQuestion = () => {
+    this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
+  }
+
   render() {
     console.log(this.props)
       const { choice } = this.state.userAnswer
       const {questions} = this.props
-
-      const newQuestions = randomQuestionNumbers(questions);
+      const newQuestions = randomQuestionNumbers(questions)
 
         return (
         <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px'}}>
             Total Correct
               <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '20px' }}>
-                { this.props.total_correct ? this.props.total_correct : 0 }
+                { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
               </div>
           </Header>
-          <Questions question={newQuestions[this.state.questionIndex]}/>
-
+          <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion}/>
         </>
       )
     }
@@ -44,7 +46,8 @@ class GameContainer extends React.Component {
 const mapStateToProps = state => {
   console.log("This is state", state)
   return {
-    questions: state.questions.questions
+    questions: state.questions.questions,
+    userAnswer: state.questions.correct_answer
   }
 }
 
