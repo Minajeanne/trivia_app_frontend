@@ -1,26 +1,44 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Grid, Header, Message, Button} from 'semantic-ui-react';
 
 const Questions = (props) => {
   let answerChoices = []
+  let correctAnswer = []
 
   if (props.question) {
    answerChoices = [...props.question.incorrect_answers, props.question.correct_answer]
+
+   correctAnswer = props.question.correct_answer
   }
-  console.log(answerChoices)
+
       return (
         props.question ?
           <div>
             <h3>Category: { props.question.category }</h3>
-            <h2><strong>{ props.question.question }</strong></h2>
-              {answerChoices.map(choice => (<h2><strong><p>{ choice }</p></strong></h2>))}
-          </div>
+              <h2><strong>{ props.question.question }</strong></h2>
+                {answerChoices.map(choice => (
+                  <Button value="" onClick={handleClick}>{ choice }</Button>
+                ))}
+              </div>
             : null
       )
 }
 
 export default Questions;
+
+
+
+
+
+
+
+
+
+
+
+// if props.question.correct_answer === userAnswer
 
 // {newQuestions.map((q, i) => {
 //   return (
@@ -35,4 +53,4 @@ export default Questions;
 //   )}
 // )
 // }
-// 
+//
