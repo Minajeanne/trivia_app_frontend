@@ -7,7 +7,6 @@
 //     state = {
 //         username: null,
 //         userPr: null,
-//         totalCorrect: null,
 //         userRank: null
 //     }
 //
@@ -38,7 +37,6 @@
 //       //         this.setState({
 //       //           username: resp.currentUser.username,
 //       //           userPr: resp.userPr,
-//       //           totalCorrect: resp.totalCorrect,
 //       //           userRank: resp.userRank
 //       //         })
 //       //     })
@@ -83,12 +81,6 @@
 // //
 // //   return userStats
 // // }
-// //
-// // // we provide mapStateToProps to Redux in order to tell Redux:
-// // // "Excuse me Redux, would you please provide use access to your state
-// // // so that we may pick and choose the pieces of state we would like availble
-// // // to this particular component as props."
-// //
 // // const mapStateToProps = state => {
 // //   return {
 // //     stats: state.myStats
