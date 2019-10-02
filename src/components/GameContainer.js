@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Header, Message, Button} from 'semantic-ui-react';
+import { Grid, Header, Message, Button } from 'semantic-ui-react';
 import Questions from './Questions.js';
 
 function randomQuestionNumbers(array) {
@@ -24,10 +24,16 @@ class GameContainer extends React.Component {
     this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
   }
 
+  endGame = () => {
+    console.log('Game Over')
+    // this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
+
+  }
+
   render() {
     console.log(this.props)
       const { choice } = this.state.userAnswer
-      const {questions} = this.props
+      const { questions } = this.props
       const newQuestions = randomQuestionNumbers(questions)
 
         return (
@@ -37,7 +43,7 @@ class GameContainer extends React.Component {
                 { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
               </div>
           </Header>
-          <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion}/>
+          <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame}/>
         </>
       )
     }

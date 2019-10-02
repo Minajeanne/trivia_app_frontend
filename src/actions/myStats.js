@@ -1,135 +1,97 @@
-
 // synchronous actions
-export const setMyStats = stats => {
+// export const setMyStats = stats => {
+//   return {
+//     type: "SET_MY_STATS",
+//     stats
+//   }
+// }
+
+export const addStats = stats => {
   return {
-    type: "SET_MY_STATS",
+    type: "ADD_STATS",
     stats
   }
 }
 
-// export const clearGames = () => {
-//   return {
-//     type: "CLEAR_GAMES"
-//   }
-// }
-//
-// export const addGame = game => {
-//   return {
-//     type: "ADD_GAME",
-//     game
-//   }
-// }
-//
-// export const deleteGameSuccess = gameId => {
-//   return {
-//     type: "DELETE_GAME",
-//     gameId
-//   }
-// }
-//
-// export const updateGameSuccess = game => {
-//   return {
-//     type: "UPDATE_GAME",
-//     game
-//   }
-// }
+export const updateStatsSuccess = stats => {
+  return {
+    type: "UPDATE_STATS",
+    stats
+  }
+}
 
 // async actions
 export const getMyStats = () => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/stats", {
+    })
+      .then(r => r.json())
+      .then(fetchedStats => {
+        console.log('Here are your stats:', fetchedStats)
+        dispatch({ type: 'GET_MY_STATS', fetchedStats})
+      }
+    )
+    .catch(console.log)
+  }
+}
+
+
+export const createStats = (statsData, history) => {
+  return dispatch => {
+    const sendableStatsData = {
+      user_pr: statsData.userPr,
+      user_rank: statsData.userRank,
+      total_correct: statsData.totalCorrect,
+      user_id: statsData.userId
+    }
+    return fetch("http://localhost:3001/api/v1/stats", {
       credentials: "include",
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
+      body: JSON.stringify(sendableStatsData)
     })
       .then(r => r.json())
-      .then(response => {
-        if (response.error) {
-          alert(response.error)
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error)
         } else {
-          dispatch(setMyStats(response.data))
+          dispatch(addStats(resp.data))
+          // dispatch(resetTripForm())
+          // history.push(`/stats/${resp.data.id}`)
         }
       })
       .catch(console.log)
   }
 }
 
-// export const createGame = (gameData, history) => {
-//   return dispatch => {
-//     const sendableGameData = {
-//       user_id: gameData.userId
-//     }
-//     return fetch("http://localhost:3001/api/v1/games", {
-//       credentials: "include",
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(sendableGameData)
-//     })
-//       .then(r => r.json())
-//       .then(resp => {
-//         if (resp.error) {
-//           alert(resp.error)
-//         } else {
-//           dispatch(addGame(resp.data))
-//           // dispatch(resetTripForm())
-//           history.push(`/games/${resp.data.id}`)
-//         }
-//       })
-//       .catch(console.log)
-//
-//   }
-// }
-//
-// // NEED THIS??
-// export const updateGame = (gameData, history) => {
-//   return dispatch => {
-//     const sendableGameData = {
-//       user_id: gameData.userId
-//     }
-//     return fetch(`http://localhost:3001/api/v1/games/${gameData.gameId}`, {
-//       credentials: "include",
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(sendableGameData)
-//     })
-//       .then(r => r.json())
-//       .then(resp => {
-//         if (resp.error) {
-//           alert(resp.error)
-//         } else {
-//           dispatch(updateGameSuccess(resp.data))
-//           history.push(`/games/${resp.data.id}`)
-//         }
-//       })
-//       .catch(console.log)
-//
-//   }
-// }
-//
-// export const deleteGame = (gameId, history) => {
-//   return dispatch => {
-//     return fetch(`http://localhost:3001/api/v1/games/${gameId}`, {
-//       credentials: "include",
-//       method: "DELETE",
-//       headers: {
-//         "Content-Type": "application/json"
-//       }
-//     })
-//       .then(r => r.json())
-//       .then(resp => {
-//         if (resp.error) {
-//           alert(resp.error)
-//         } else {
-//           dispatch(deleteGameSuccess(gameId))
-//           history.push(`/games`)
-//         }
-//       })
-//       .catch(console.log)
-//   }
-// }
+// NEED THIS??
+export const updateStats = (statsData, history) => {
+  return dispatch => {
+    const sendableStatsData = {
+      user_pr: statsData.userPr,
+      user_rank: statsData.userRank,
+      total_correct: statsData.totalCorrect,
+      user_id: statsData.userId
+    }
+    return fetch("http://localhost:3001/api/v1/stats", {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(sendableStatsData)
+    })
+      .then(r => r.json())
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          dispatch(updateStatsSuccess(resp.data))
+          // history.push(`/games/${resp.data.id}`)
+        }
+      })
+      .catch(console.log)
+  }
+}
