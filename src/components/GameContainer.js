@@ -28,9 +28,9 @@ class GameContainer extends React.Component {
   }
 
   endGame = () => {
-    console.log('Game Over')
-    console.log(this.state.questionIndex)
-    updateStats(this.props.currentUser, this.state.questionIndex)
+    // console.log('Game Over')
+    // console.log(this.state.questionIndex)
+    updateStats(this.props.currentUser.id, this.state.questionIndex)
   }
 
   render() {
@@ -39,7 +39,7 @@ class GameContainer extends React.Component {
       const { questions } = this.props
       const newQuestions = randomQuestionNumbers(questions)
       const { userStats } = this.state.questionIndex
-      // debugger
+
 console.log(this.state.questionIndex)
         return (
         <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px'}}>
