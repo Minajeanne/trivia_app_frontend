@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Header, Message, Button } from 'semantic-ui-react';
+import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
+// import MyStats from './MyStats.js';
 
 function randomQuestionNumbers(array) {
   let i = array.length - 1;
@@ -17,7 +19,8 @@ function randomQuestionNumbers(array) {
 class GameContainer extends React.Component {
   state = {
     questionIndex: 0,
-    userAnswer: ''
+    userAnswer: '',
+    myStats: ''
   }
 
   nextQuestion = () => {
@@ -26,8 +29,8 @@ class GameContainer extends React.Component {
 
   endGame = () => {
     console.log('Game Over')
-    // this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
-
+    console.log(this.state.questionIndex)
+    updateStats(this.props.currentUser, this.state.questionIndex)
   }
 
   render() {
@@ -35,7 +38,9 @@ class GameContainer extends React.Component {
       const { choice } = this.state.userAnswer
       const { questions } = this.props
       const newQuestions = randomQuestionNumbers(questions)
-
+      const { userStats } = this.state.questionIndex
+      // debugger
+console.log(this.state.questionIndex)
         return (
         <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px'}}>
             Total Correct
@@ -52,9 +57,11 @@ class GameContainer extends React.Component {
 const mapStateToProps = state => {
   console.log("This is state", state)
   return {
+    currentUser: state.currentUser,
     questions: state.questions.questions,
-    userAnswer: state.questions.correct_answer
+    userAnswer: state.questions.correct_answer,
+    myStats: state.userStats
   }
 }
 
-export default connect(mapStateToProps)(GameContainer);
+export default connect(mapStateToProps, { updateStats })(GameContainer);

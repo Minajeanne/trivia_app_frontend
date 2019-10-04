@@ -67,31 +67,30 @@ export const createStats = (statsData, history) => {
 }
 
 // NEED THIS??
-export const updateStats = (statsData, history) => {
-  return dispatch => {
-    const sendableStatsData = {
-      user_pr: statsData.userPr,
-      user_rank: statsData.userRank,
-      total_correct: statsData.totalCorrect,
-      user_id: statsData.userId
-    }
-    return fetch("http://localhost:3001/api/v1/stats", {
-      credentials: "include",
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(sendableStatsData)
-    })
-      .then(r => r.json())
-      .then(resp => {
-        if (resp.error) {
-          alert(resp.error)
-        } else {
-          dispatch(updateStatsSuccess(resp.data))
-          // history.push(`/games/${resp.data.id}`)
-        }
-      })
-      .catch(console.log)
-  }
+export const updateStats = (currentUser, score) => {
+  debugger
+  // return dispatch => {
+  //   const sendableStatsData = {
+  //     user_pr: statsData.userPr,
+  //     user_rank: statsData.userRank,
+  //     total_correct: statsData.totalCorrect,
+  //     user_id: statsData.userId
+  //   }
+    // return fetch("http://localhost:3001/api/v1/stats", {
+    //   method: "PATCH",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(sendableStatsData)
+    // })
+    //   .then(r => r.json())
+    //   .then(resp => {
+    //     if (resp.error) {
+    //       alert(resp.error)
+    //     } else {
+    //       dispatch(updateStatsSuccess(resp.data))
+    //       // history.push(`/games/${resp.data.id}`)
+    //     }
+    //   })
+      // .catch(console.log)
 }

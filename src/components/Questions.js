@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Message, Button} from 'semantic-ui-react';
+import { Message, Button } from 'semantic-ui-react';
 
 const Questions = (props) => {
   let answerChoices = []
@@ -11,11 +11,11 @@ const Questions = (props) => {
     value === correctAnswer ? props.nextQuestion() : props.endGame()
   }
 
-  if (props.question) {
-   answerChoices = [...props.question.incorrect_answers, props.question.correct_answer]
+    if (props.question) {
+     answerChoices = [...props.question.incorrect_answers, props.question.correct_answer]
 
-   correctAnswer = props.question.correct_answer
- }
+     correctAnswer = props.question.correct_answer
+   }
       return (
         props.question ?
           <div>
@@ -24,7 +24,7 @@ const Questions = (props) => {
                 {answerChoices.map(choice => (
                   <Button value={choice} onClick={handleClick}>{ choice }</Button>))}
               </div>
-            : null
+        : null
       )
 }
 
