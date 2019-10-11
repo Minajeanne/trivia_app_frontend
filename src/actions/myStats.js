@@ -21,19 +21,33 @@ export const updateStatsSuccess = stats => {
 }
 
 // async actions
-export const getMyStats = () => {
+
+export const getMyStats = (currentUser, stats) => {
+  console.log('You hit this', currentUser)
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/stats", {
+    return fetch(`http://localhost:3001/api/v1/users/${currentUser}/stats`, {
+      method: "GET",
     })
       .then(r => r.json())
       .then(fetchedStats => {
         console.log('Here are your stats:', fetchedStats)
         dispatch({ type: 'GET_MY_STATS', fetchedStats})
-      }
-    )
-    .catch(console.log)
+      })
   }
 }
+
+// export const getMyStats = (currentUser, stats) => {
+//   console.log('You hit this')
+//   return dispatch => {
+//     return fetch("http://localhost:3001/api/v1/stats", {
+//     })
+//       .then(r => r.json())
+//       .then(stats => {
+//         console.log('Here are your stats:', stats)
+//         dispatch({ type: 'GET_MY_STATS', stats})
+//       })
+//   }
+// }
 
 // export const createStats = (statsData, history) => {
 //   return dispatch => {
@@ -76,6 +90,5 @@ export const updateStats = (currentUser, score) => {
     })
       .then(r => r.json())
       .then(r => {
-
       })
 }

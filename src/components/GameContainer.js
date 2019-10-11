@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Grid, Header, Message, Button } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
-// import MyStats from './MyStats.js';
+import MyStats from './MyStats.js';
 
 function randomQuestionNumbers(array) {
   let i = array.length - 1;
@@ -28,9 +28,11 @@ class GameContainer extends React.Component {
   }
 
   endGame = () => {
-    // console.log('Game Over')
-    // console.log(this.state.questionIndex)
+    console.log('Game Over')
     updateStats(this.props.currentUser.id, this.state.questionIndex)
+      return (
+        "GAME OVER"
+      )
   }
 
   render() {

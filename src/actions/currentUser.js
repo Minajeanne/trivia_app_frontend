@@ -1,5 +1,6 @@
-import { resetLoginForm } from "./loginForm.js"
-import { resetSignupForm } from "./signupForm.js"
+import { getMyStats } from "./myStats.js";
+import { resetLoginForm } from "./loginForm.js";
+import { resetSignupForm } from "./signupForm.js";
 // import { getMyTrips, clearTrips } from "./myTrips.js"
 
 // synchronous action creators
@@ -34,7 +35,7 @@ export const login = (credentials, history) => {
         } else {
           dispatch(setCurrentUser(response.data))
           // figure out what to add here **
-          // dispatch(getMyTrips())
+          dispatch(getMyStats())
           dispatch(resetLoginForm())
           history.push('/')
         }
@@ -97,7 +98,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          // dispatch(getMyTrips())
+          dispatch(getMyStats())
         }
       })
       .catch(console.log)

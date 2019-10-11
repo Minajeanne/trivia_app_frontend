@@ -23,4 +23,4 @@ const mapStateToProps = ({ currentUser }) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchQuestions })(NavBar);
+export default connect(mapStateToProps, { fetchQuestions, getMyStats })(NavBar);
