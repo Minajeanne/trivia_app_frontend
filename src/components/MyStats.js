@@ -11,17 +11,20 @@ class MyStats extends React.Component {
   }
 
   // componentDidMount() {
-  //   console.log('You hit this')
+  //   console.log('BAM')
   //
-  //     fetch("http://localhost:3001/api/v1/stats", {
+  //     fetch(`http://localhost:3001/api/v1/users/${currentUser}/stats`, {
   //       method: 'GET',
-  //       })
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //      },
+  //      })
   //       .then(r => r.json())
-  //       .then(r => {
-  //         console.log(r)
+  //       .then(stats => {
+  //         console.log(stats)
   //           this.setState({
-  //             userPr: r.userPr,
-  //             userRank: r.userRank
+  //             userPr: stats.userPr,
+  //             userRank: stats.userRank
   //           })
   //       }
   //     )
@@ -31,11 +34,10 @@ class MyStats extends React.Component {
   render() {
 
     const { userPr, userRank } = this.state
-    const myStats = getMyStats(fetchedStats)
 
     return (
       <div>
-        {myStats}
+
         <h1>Your Top Score:</h1>
           {userPr ?
               <div className="main-number">{userPr}</div>

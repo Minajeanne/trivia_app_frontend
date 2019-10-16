@@ -20,15 +20,19 @@ class GameContainer extends React.Component {
   state = {
     questionIndex: 0,
     userAnswer: '',
-    myStats: ''
+    userStats: ''
   }
 
   nextQuestion = () => {
     this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
   }
 
+  // setUserStats = () => {
+  //   this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
+  // }
+
   endGame = () => {
-    console.log('Game Over')
+    console.log('Game Over', this.state.questionIndex)
     updateStats(this.props.currentUser.id, this.state.questionIndex)
       return (
         "GAME OVER"
@@ -36,7 +40,7 @@ class GameContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    console.log('These are props', this.props)
       const { choice } = this.state.userAnswer
       const { questions } = this.props
       const newQuestions = randomQuestionNumbers(questions)
@@ -57,12 +61,12 @@ console.log(this.state.questionIndex)
 }
 
 const mapStateToProps = state => {
-  console.log("This is state", state)
+  console.log("This is state in GameContainer", state)
   return {
     currentUser: state.currentUser,
     questions: state.questions.questions,
     userAnswer: state.questions.correct_answer,
-    myStats: state.userStats
+    userStats: state.questionIndex
   }
 }
 

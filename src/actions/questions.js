@@ -8,6 +8,6 @@ export const fetchQuestions = () => {
           dispatch({ type: 'FETCH_QUESTIONS', fetchedQuestions})
         }
       )
-      .catch(console.log)
+    .catch(console.log)
   }
 }

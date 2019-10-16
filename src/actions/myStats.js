@@ -22,17 +22,22 @@ export const updateStatsSuccess = stats => {
 
 // async actions
 
-export const getMyStats = (currentUser, stats) => {
-  console.log('You hit this', currentUser)
+export const getMyStats = () => {
+  console.log('You hit this')
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/users/${currentUser}/stats`, {
+    return fetch(`http://localhost:3001/api/v1/stats`, {
+      credentials: "include",
       method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+     },
     })
       .then(r => r.json())
       .then(fetchedStats => {
         console.log('Here are your stats:', fetchedStats)
         dispatch({ type: 'GET_MY_STATS', fetchedStats})
       })
+    .catch(console.log)
   }
 }
 
