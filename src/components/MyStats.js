@@ -10,34 +10,19 @@ class MyStats extends React.Component {
     userRank: null
   }
 
-  // componentDidMount() {
-  //   console.log('BAM')
-  //
-  //     fetch(`http://localhost:3001/api/v1/users/${currentUser}/stats`, {
-  //       method: 'GET',
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //      },
-  //      })
-  //       .then(r => r.json())
-  //       .then(stats => {
-  //         console.log(stats)
-  //           this.setState({
-  //             userPr: stats.userPr,
-  //             userRank: stats.userRank
-  //           })
-  //       }
-  //     )
-  //     .catch(console.log)
-  // }
+  componentDidMount() {
+    this.props.getMyStats(this.props.currentUser)
+  }
 
   render() {
 
     const { userPr, userRank } = this.state
 
+console.log('this is PROPS', this.props)
+
     return (
       <div>
-      {}
+
         <h1>Your Top Score:</h1>
           {userPr ?
               <div className="main-number">{userPr}</div>
@@ -48,14 +33,16 @@ class MyStats extends React.Component {
     )
   }
 }
-//
-// const mapStateToProps = state => {
-//   console.log("This is state", state)
-//   return {
-//     // userPr: state.myStats.userPr,
-//     // userRank: state.myStats.userRank
-//   }
-// }
 
-// export default connect(mapStateToProps)(MyStats);
-export default MyStats;
+const mapStateToProps = state => {
+  console.log("This is state", state)
+  return {
+    currentUser: state.currentUser,
+    fetchedStats: state.fetchedStats
+    // userPr: state.myStats.userPr,
+    // userRank: state.myStats.userRank
+  }
+}
+
+export default connect(mapStateToProps, { getMyStats })(MyStats);
+// export default MyStats;

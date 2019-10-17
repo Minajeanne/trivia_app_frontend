@@ -35,7 +35,7 @@ export const login = (credentials, history) => {
         } else {
           dispatch(setCurrentUser(response.data))
           // figure out what to add here **
-          dispatch(getMyStats())
+          // dispatch(getMyStats())
           dispatch(resetLoginForm())
           history.push('/')
         }
@@ -98,7 +98,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(getMyStats())
+          // dispatch(getMyStats())
         }
       })
       .catch(console.log)

@@ -5,15 +5,15 @@ import { fetchQuestions } from '../actions/questions.js';
 import { getMyStats } from '../actions/myStats.js';
 import Logout from './Logout.js';
 
-const NavBar = ({ currentUser, loggedIn, fetchQuestions, getMyStats }) => {
+const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
 
-  const handleClick = () => {
-    getMyStats(currentUser)
-  }
+  // const handleClick = () => {
+  //   getMyStats(currentUser)
+  // }
 
   return (
     <div className="NavBar">
-      <NavLink exact activeClassName="active" to="/stats" onClick={handleClick}>My Stats</NavLink><br></br>
+      <NavLink exact activeClassName="active" to="/stats">My Stats</NavLink><br></br>
       <NavLink exact activeClassName="active" to="/games/new" onClick={fetchQuestions}>New Game</NavLink>
       { loggedIn ? <> <p id="loggedin">Welcome,  {currentUser.attributes.username}!</p><Logout /></> : null}
     </div>
@@ -27,4 +27,4 @@ const mapStateToProps = ({ currentUser }) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchQuestions, getMyStats })(NavBar);
+export default connect(mapStateToProps, { fetchQuestions })(NavBar);

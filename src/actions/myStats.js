@@ -1,29 +1,17 @@
 // synchronous actions
-// export const setMyStats = stats => {
+
+// export const updateStatsSuccess = stats => {
 //   return {
-//     type: "SET_MY_STATS",
+//     type: "UPDATE_STATS",
 //     stats
 //   }
 // }
-
-export const addStats = stats => {
-  return {
-    type: "ADD_STATS",
-    stats
-  }
-}
-
-export const updateStatsSuccess = stats => {
-  return {
-    type: "UPDATE_STATS",
-    stats
-  }
-}
 
 // async actions
 
 export const getMyStats = (currentUser) => {
   console.log('You hit your stats action', currentUser)
+  // debugger
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/stats/${currentUser.id}`, {
       credentials: "include",
@@ -35,7 +23,7 @@ export const getMyStats = (currentUser) => {
       .then(r => r.json())
       .then(fetchedStats => {
         console.log('Here are your stats:', fetchedStats)
-        // dispatch({ type: 'GET_MY_STATS', fetchedStats})
+        dispatch({ type: 'GET_MY_STATS', fetchedStats})
       })
     .catch(console.log)
   }
@@ -86,6 +74,7 @@ export const getMyStats = (currentUser) => {
 
 // NEED THIS??
 export const updateStats = (currentUser, score) => {
+  return dispatch => {
     return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {
       method: "PATCH",
       headers: {
@@ -94,6 +83,7 @@ export const updateStats = (currentUser, score) => {
       body: JSON.stringify({score})
     })
       .then(r => r.json())
-      .then(r => {
+      .then(r => { dispatch({type: 'UPDATE_STATS', stats: r })
       })
+  }
 }
