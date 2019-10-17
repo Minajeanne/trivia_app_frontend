@@ -1,4 +1,3 @@
-// import { GET_MY_STATS } from '../actions/myStats.js';
 
 export default (state = {stats: [], userPr: 0}, action) => {
   console.log('This is myStats reducer', action)
@@ -7,7 +6,7 @@ export default (state = {stats: [], userPr: 0}, action) => {
       return {stats: action.fetchedStats}
     case "UPDATE_STATS":
       debugger
-      let uPr 
+      let uPr
       return {...state, stats: action.stats, userPr: uPr}
     default:
       return state;

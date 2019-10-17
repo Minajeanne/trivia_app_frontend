@@ -29,6 +29,28 @@ export const getMyStats = (currentUser) => {
   }
 }
 
+// NEED THIS??
+export const updateStats = (currentUser, score) => {
+  // debugger
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({score})
+    })
+      .then(r => r.json())
+      .then(r => {
+        console.log(r)
+        dispatch({type: 'UPDATE_STATS', stats: r})
+      }
+    )
+  }
+}
+
+
 // export const getMyStats = (currentUser, stats) => {
 //   console.log('You hit this')
 //   return dispatch => {
@@ -71,19 +93,3 @@ export const getMyStats = (currentUser) => {
 //       .catch(console.log)
 //   }
 // }
-
-// NEED THIS??
-export const updateStats = (currentUser, score) => {
-  return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({score})
-    })
-      .then(r => r.json())
-      .then(r => { dispatch({type: 'UPDATE_STATS', stats: r })
-      })
-  }
-}
