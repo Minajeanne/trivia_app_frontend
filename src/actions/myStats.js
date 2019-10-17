@@ -22,10 +22,10 @@ export const updateStatsSuccess = stats => {
 
 // async actions
 
-export const getMyStats = () => {
-  console.log('You hit this')
+export const getMyStats = (currentUser) => {
+  console.log('You hit your stats action', currentUser)
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/stats`, {
+    return fetch(`http://localhost:3001/api/v1/stats/${currentUser.id}`, {
       credentials: "include",
       method: "GET",
       headers: {
@@ -35,7 +35,7 @@ export const getMyStats = () => {
       .then(r => r.json())
       .then(fetchedStats => {
         console.log('Here are your stats:', fetchedStats)
-        dispatch({ type: 'GET_MY_STATS', fetchedStats})
+        // dispatch({ type: 'GET_MY_STATS', fetchedStats})
       })
     .catch(console.log)
   }

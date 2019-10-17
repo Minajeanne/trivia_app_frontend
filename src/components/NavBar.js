@@ -7,9 +7,13 @@ import Logout from './Logout.js';
 
 const NavBar = ({ currentUser, loggedIn, fetchQuestions, getMyStats }) => {
 
+  const handleClick = () => {
+    getMyStats(currentUser)
+  }
+
   return (
     <div className="NavBar">
-      <NavLink exact activeClassName="active" to="/stats" onClick={getMyStats}>My Stats</NavLink><br></br>
+      <NavLink exact activeClassName="active" to="/stats" onClick={handleClick}>My Stats</NavLink><br></br>
       <NavLink exact activeClassName="active" to="/games/new" onClick={fetchQuestions}>New Game</NavLink>
       { loggedIn ? <> <p id="loggedin">Welcome,  {currentUser.attributes.username}!</p><Logout /></> : null}
     </div>

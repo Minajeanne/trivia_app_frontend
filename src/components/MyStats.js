@@ -37,7 +37,7 @@ class MyStats extends React.Component {
 
     return (
       <div>
-
+      {}
         <h1>Your Top Score:</h1>
           {userPr ?
               <div className="main-number">{userPr}</div>
