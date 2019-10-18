@@ -38,30 +38,3 @@ const Questions = (props) => {
 }
 
 export default Questions;
-
-
-
-
-
-
-
-
-
-
-
-// if props.question.correct_answer === userAnswer
-
-// {newQuestions.map((q, i) => {
-//   return (
-//     <div key={i}>
-//         <p><strong>{ q.category }</strong></p><br></br>
-//         <p>{ q.question }</p><br></br>
-//           <Message hidden={ q.correct_answer === "Correct! On to the next!" ? false : true } color={"red"}>
-//             { q.correct_answer }
-//           </Message><br></br>
-//         <p>{}</p>
-//     </div>
-//   )}
-// )
-// }
-//

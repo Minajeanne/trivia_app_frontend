@@ -27,17 +27,21 @@ class GameContainer extends React.Component {
     this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
   }
 
-  // setUserStats = () => {
-  //   this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
-  // }
-
   endGame = () => {
     console.log('Game Over', this.state.questionIndex)
-    debugger
     this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex)
       return (
         "GAME OVER"
       )
+  }
+
+  renderQuestions = () => {
+    if (this.state.endGame) {
+      return `<div></div`
+
+    } else {
+      return <Questions></Questions>
+    }
   }
 
   render() {
@@ -47,7 +51,6 @@ class GameContainer extends React.Component {
       const newQuestions = randomQuestionNumbers(questions)
       const { userStats } = this.state.questionIndex
 
-console.log(this.state.questionIndex)
         return (
         <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px'}}>
             Total Correct
@@ -55,6 +58,8 @@ console.log(this.state.questionIndex)
                 { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
               </div>
           </Header>
+
+          
           <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame}/>
         </>
       )

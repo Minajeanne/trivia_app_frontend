@@ -5,10 +5,6 @@ import { getMyStats, updateStats } from '../actions/myStats.js';
 import { Link } from 'react-router-dom';
 
 class MyStats extends React.Component {
-  // state = {
-  //   userPr: null,
-  //   userRank: null
-  // }
 
   componentDidMount() {
     this.props.getMyStats(this.props.currentUser)

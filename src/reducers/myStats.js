@@ -11,7 +11,7 @@ export default (state = {stats: []}, action) => {
       //     pr = action.stats.total_correct
       //     // return {...state, stats: action.stats, userPr: newPr}
       //       }
-            debugger
+      // debugger
         return {...state, stats: action.stats}
     default:
       return state;
