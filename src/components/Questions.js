@@ -14,17 +14,20 @@ const Questions = (props) => {
     if (props.question) {
       let rand
       correctAnswer = props.question.correct_answer
+
       console.log(correctAnswer)
+
       answerChoices = [...props.question.incorrect_answers]
-      if (props.question.incorrect_answers.length == 1) {
-        rand = Math.floor(Math.random() * 2);
-        answerChoices.splice(rand, 0, correctAnswer)
-      } else {
-       rand = Math.floor(Math.random() * 4);
+        if (props.question.incorrect_answers.length == 1) {
+          rand = Math.floor(Math.random() * 2);
+          answerChoices.splice(rand, 0, correctAnswer)
+        } else {
+         rand = Math.floor(Math.random() * 4);
 
        answerChoices.splice(rand, 0, correctAnswer)
+       }
      }
-   }
+     
       return (
         props.question ?
           <div>

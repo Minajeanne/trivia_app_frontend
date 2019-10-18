@@ -21,7 +21,7 @@ class MyStats extends React.Component {
           {userPr ?
               <div className="main-number">{userPr}</div>
               :
-              <div className="subtext">You've yet to answer any questions!</div>
+              <div className="subtext">You've yet to answer any questions correctly!</div>
           }
       </div>
     )
@@ -29,7 +29,6 @@ class MyStats extends React.Component {
 }
 
 const mapStateToProps = state => {
-  debugger
   return {
     currentUser: state.currentUser,
     stats: state.myStats.stats

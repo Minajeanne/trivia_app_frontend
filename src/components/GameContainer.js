@@ -28,21 +28,17 @@ class GameContainer extends React.Component {
   }
 
   endGame = () => {
-    console.log('Game Over', this.state.questionIndex)
     this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex)
-      return (
-        "GAME OVER"
-      )
   }
 
-  renderQuestions = () => {
-    if (this.state.endGame) {
-      return `<div></div`
-
-    } else {
-      return <Questions></Questions>
-    }
-  }
+  // renderQuestions = () => {
+  //   if (this.state.endGame) {
+  //     return `<div>Oops! The correct answer was {correct_answer}</div`
+  //
+  //   } else {
+  //     return <Questions></Questions>
+  //   }
+  // }
 
   render() {
     console.log('These are props', this.props)
@@ -58,13 +54,13 @@ class GameContainer extends React.Component {
                 { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
               </div>
           </Header>
-
-          
-          <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame}/>
+          <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion}
+          endGame={this.endGame}/>
         </>
       )
     }
-}
+  }
+
 
 const mapStateToProps = state => {
   console.log("This is state in GameContainer", state)
