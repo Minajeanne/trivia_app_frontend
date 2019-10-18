@@ -8,7 +8,7 @@ const Questions = (props) => {
   let correctAnswer = ''
 
   const handleClick = (e, { value }) => {
-    value === correctAnswer ? props.nextQuestion() : props.endGame()
+    value === correctAnswer ? props.nextQuestion() :  props.endGame()
   }
 
     if (props.question) {
@@ -18,7 +18,7 @@ const Questions = (props) => {
       console.log(correctAnswer)
 
       answerChoices = [...props.question.incorrect_answers]
-        if (props.question.incorrect_answers.length == 1) {
+        if (props.question.incorrect_answers.length === 1) {
           rand = Math.floor(Math.random() * 2);
           answerChoices.splice(rand, 0, correctAnswer)
         } else {
