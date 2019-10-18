@@ -31,7 +31,6 @@ export const getMyStats = (currentUser) => {
 
 // NEED THIS??
 export const updateStats = (currentUser, score) => {
-  // debugger
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {
       credentials: "include",

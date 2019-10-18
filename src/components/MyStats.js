@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import GameContainer from './GameContainer.js';
-import { getMyStats } from '../actions/myStats.js';
+import { getMyStats, updateStats } from '../actions/myStats.js';
 import { Link } from 'react-router-dom';
 
 class MyStats extends React.Component {
-  state = {
-    userPr: null,
-    userRank: null
-  }
+  // state = {
+  //   userPr: null,
+  //   userRank: null
+  // }
 
   componentDidMount() {
     this.props.getMyStats(this.props.currentUser)
@@ -16,9 +16,7 @@ class MyStats extends React.Component {
 
   render() {
 
-    const { userPr, userRank } = this.state
-
-console.log('this is PROPS', this.props)
+    const userPr = this.props.stats.total_correct
 
     return (
       <div>
@@ -35,14 +33,13 @@ console.log('this is PROPS', this.props)
 }
 
 const mapStateToProps = state => {
-  console.log("This is state", state)
+  debugger
   return {
     currentUser: state.currentUser,
-    fetchedStats: state.fetchedStats
-    // userPr: state.myStats.userPr,
+    stats: state.myStats.stats
+    // fetchedStats: state.fetchedStats,
     // userRank: state.myStats.userRank
   }
 }
 
 export default connect(mapStateToProps, { getMyStats })(MyStats);
-// export default MyStats;

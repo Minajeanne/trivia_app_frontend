@@ -33,7 +33,7 @@ class GameContainer extends React.Component {
 
   endGame = () => {
     console.log('Game Over', this.state.questionIndex)
-  
+    debugger
     this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex)
       return (
         "GAME OVER"
