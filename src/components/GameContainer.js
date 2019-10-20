@@ -48,8 +48,7 @@ class GameContainer extends React.Component {
     const { questions } = this.props
     const newQuestions = randomQuestionNumbers(questions)
     const { userStats } = this.state.questionIndex
-    // const correctAnswer = this.props.question
-debugger
+
     if (this.state.inProgress === true) {
       return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
       } else {
