@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { Message, Button } from 'semantic-ui-react';
 
 const Questions = (props) => {
@@ -8,7 +7,7 @@ const Questions = (props) => {
   let correctAnswer = ''
 
   const handleClick = (e, { value }) => {
-    value === correctAnswer ? props.nextQuestion() :  props.endGame()
+    value === correctAnswer ? props.nextQuestion() : props.endGame()
   }
 
     if (props.question) {
@@ -27,15 +26,16 @@ const Questions = (props) => {
        answerChoices.splice(rand, 0, correctAnswer)
        }
      }
-     
+
       return (
         props.question ?
           <div>
-            <h3>Category: { props.question.category }</h3>
+            <h3>Category:  { props.question.category }</h3>
               <h2><strong>{ props.question.question }</strong></h2>
+
                 {answerChoices.map(choice => (
                   <Button value={choice} onClick={handleClick}>{ choice }</Button>))}
-              </div>
+          </div>
         : null
       )
 }

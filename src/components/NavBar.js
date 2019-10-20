@@ -14,8 +14,8 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
   return (
     <div className="NavBar">
       <NavLink exact activeClassName="active" to="/stats">My Stats</NavLink><br></br>
-      <NavLink exact activeClassName="active" to="/games/new" onClick={fetchQuestions}>New Game</NavLink>
-      { loggedIn ? <> <p id="loggedin">Welcome,  {currentUser.attributes.username}!</p><Logout /></> : null}
+      <NavLink exact activeClassName="active" to="/games/new" onClick={fetchQuestions}>New Game</NavLink><br></br>
+      { loggedIn ? <> <p id="loggedin"><br></br>Welcome,  {currentUser.attributes.username}!</p><br></br><Logout /><br></br></> : null}
     </div>
   )
 }

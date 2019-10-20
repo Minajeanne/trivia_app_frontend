@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Grid, Header, Message, Button } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
+import EndGame from './EndGame.js';
 import MyStats from './MyStats.js';
 
 function randomQuestionNumbers(array) {
@@ -20,7 +21,8 @@ class GameContainer extends React.Component {
   state = {
     questionIndex: 0,
     userAnswer: '',
-    userStats: ''
+    userStats: '',
+    showNextQuestion: true
   }
 
   nextQuestion = () => {
@@ -31,34 +33,26 @@ class GameContainer extends React.Component {
     this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex)
   }
 
-  // renderQuestions = () => {
-  //   if (this.state.endGame) {
-  //     return `<div>Oops! The correct answer was {correct_answer}</div`
-  //
-  //   } else {
-  //     return <Questions></Questions>
-  //   }
-  // }
-
   render() {
-    console.log('These are props', this.props)
-      const { choice } = this.state.userAnswer
-      const { questions } = this.props
-      const newQuestions = randomQuestionNumbers(questions)
-      const { userStats } = this.state.questionIndex
 
-        return (
-          <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px' }}>
-              Total Correct
-                <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '20px' }}>
-                  { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
-                </div>
-            </Header>
+    const { choice } = this.state.userAnswer
+    const { questions } = this.props
+    const newQuestions = randomQuestionNumbers(questions)
+    const { userStats } = this.state.questionIndex
 
-            <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion}
-            endGame={this.endGame}/>
-          </>
-        )
+    return (
+
+        <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px' }}>
+          Total Correct
+            <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
+              { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
+            </div>
+        </Header>
+          <div>
+            <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />
+          </div>
+        </>
+    )
   }
 }
 
@@ -74,3 +68,12 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { updateStats })(GameContainer);
+
+
+// // {this.state.showNextQuestion ?
+//   <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} incorrectAnswer={() => this.setState({ showNextQuestion: false })}/>
+// </div>
+// </>
+// // :
+// // <EndGame newGame={() => this.setState({ showNextQuestion: true })} correctAnswer={this.state.questions.correct_answer} />
+// // }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import GameContainer from './GameContainer.js';
 import { getMyStats, updateStats } from '../actions/myStats.js';
-import { Link } from 'react-router-dom';
+import { Header, Message, Button } from 'semantic-ui-react';
 
 class MyStats extends React.Component {
 
@@ -17,12 +17,16 @@ class MyStats extends React.Component {
     return (
       <div>
 
-        <h1>Your Top Score:</h1>
+        <Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px'}}>
+          Your Top Score:
+        </Header>
+          <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
           {userPr ?
               <div className="main-number">{userPr}</div>
               :
               <div className="subtext">You've yet to answer any questions correctly!</div>
           }
+          </div>
       </div>
     )
   }
