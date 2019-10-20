@@ -54,6 +54,7 @@ class GameContainer extends React.Component {
     }
   }
 
+
   render() {
 
     // const { choice } = this.state.userAnswer
@@ -69,7 +70,9 @@ class GameContainer extends React.Component {
               { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
             </div>
         </Header>
-
+          <div>
+            {this.nextQuestionOrEndGame()}
+          </div>
         </>
     )
   }
