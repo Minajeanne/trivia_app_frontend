@@ -22,7 +22,13 @@ class GameContainer extends React.Component {
     questionIndex: 0,
     userAnswer: '',
     userStats: '',
-    showNextQuestion: true
+    inProgress: true
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.inProgress !== this.state.inProgress) {
+      this.setState({ inProgress: false })
+    }
   }
 
   nextQuestion = () => {
@@ -30,23 +36,30 @@ class GameContainer extends React.Component {
   }
 
   endGame = () => {
-    this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex)
-    console.log('GAME OVER')
+    this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex);
+
+    this.setState({ inProgress: false })
   }
 
-  // newGame = () => {
-  //   return (
-  //     <EndGame correctAnswer={this.props.correctAnswer}/>
-  //   )
-  // }
-
-
-  render() {
-
+  nextQuestionOrEndGame = () => {
     const { choice } = this.state.userAnswer
     const { questions } = this.props
     const newQuestions = randomQuestionNumbers(questions)
     const { userStats } = this.state.questionIndex
+
+    if (this.state.inProgress === true) {
+      return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
+      } else {
+      return <EndGame />;
+    }
+  }
+
+  render() {
+
+    // const { choice } = this.state.userAnswer
+    // const { questions } = this.props
+    // const newQuestions = randomQuestionNumbers(questions)
+    // const { userStats } = this.state.questionIndex
 
     return (
 
@@ -56,7 +69,7 @@ class GameContainer extends React.Component {
               { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
             </div>
         </Header>
-            <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />
+
         </>
     )
   }
@@ -74,12 +87,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { updateStats })(GameContainer);
-
-
-// // {this.state.showNextQuestion ?
-//   <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} incorrectAnswer={() => this.setState({ showNextQuestion: false })}/>
-// </div>
-// </>
-// // :
-// // <EndGame newGame={() => this.setState({ showNextQuestion: true })} correctAnswer={this.state.questions.correct_answer} />
-// // }
