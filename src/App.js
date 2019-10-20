@@ -16,11 +16,7 @@ class App extends React.Component {
   componentDidMount() {
     this.props.getCurrentUser()
   }
-  // componentDidMount() {
-  //   fetch("http://localhost:3000/api/v1/users/1")
-  //   .then(r => r.json())
-  //   .then(console.log)
-  // }
+
   render() {
     const { loggedIn, games } = this.props
     return (
@@ -45,4 +41,3 @@ const mapStateToProps = state => {
 }
 
 export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
-// export default connect(mapStateToProps, { getCurrentUser })(App);
