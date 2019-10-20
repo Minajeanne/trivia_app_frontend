@@ -50,30 +50,23 @@ class GameContainer extends React.Component {
     if (this.state.inProgress === true) {
       return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
       } else {
-      return <EndGame />;
+      return <EndGame correctAnswer={this.state.userAnswer}/>;
     }
   }
 
 
   render() {
-
-    // const { choice } = this.state.userAnswer
-    // const { questions } = this.props
-    // const newQuestions = randomQuestionNumbers(questions)
-    // const { userStats } = this.state.questionIndex
-
     return (
-
-        <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px' }}>
-          Total Correct
-            <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
-              { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
-            </div>
-        </Header>
-          <div>
-            {this.nextQuestionOrEndGame()}
+      <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px' }}>
+        Total Correct
+          <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
+            { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
           </div>
-        </>
+      </Header>
+        <div>
+          {this.nextQuestionOrEndGame()}
+        </div>
+      </>
     )
   }
 }
