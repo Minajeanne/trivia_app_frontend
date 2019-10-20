@@ -22,7 +22,8 @@ class GameContainer extends React.Component {
     questionIndex: 0,
     userAnswer: '',
     userStats: '',
-    inProgress: true
+    inProgress: true,
+    answer: ''
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -35,10 +36,11 @@ class GameContainer extends React.Component {
     this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
   }
 
-  endGame = () => {
+  endGame = (correctAnswer) => {
     this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex);
 
-    this.setState({ inProgress: false })
+    this.setState({ inProgress: false, answer: correctAnswer })
+
   }
 
   nextQuestionOrEndGame = () => {
@@ -46,11 +48,12 @@ class GameContainer extends React.Component {
     const { questions } = this.props
     const newQuestions = randomQuestionNumbers(questions)
     const { userStats } = this.state.questionIndex
-
+    // const correctAnswer = this.props.question
+debugger
     if (this.state.inProgress === true) {
       return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
       } else {
-      return <EndGame correctAnswer={this.state.userAnswer}/>;
+      return <EndGame correctAnswer={this.state.answer}/>;
     }
   }
 

@@ -7,7 +7,7 @@ const Questions = (props) => {
   let correctAnswer = ''
 
   const handleClick = (e, { value }) => {
-    value === correctAnswer ? props.nextQuestion() : props.endGame()
+    value === correctAnswer ? props.nextQuestion() : props.endGame(correctAnswer)
   }
 
     if (props.question) {
