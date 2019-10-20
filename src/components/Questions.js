@@ -21,9 +21,8 @@ const Questions = (props) => {
           rand = Math.floor(Math.random() * 2);
           answerChoices.splice(rand, 0, correctAnswer)
         } else {
-         rand = Math.floor(Math.random() * 4);
-
-       answerChoices.splice(rand, 0, correctAnswer)
+           rand = Math.floor(Math.random() * 4);
+           answerChoices.splice(rand, 0, correctAnswer)
        }
      }
 

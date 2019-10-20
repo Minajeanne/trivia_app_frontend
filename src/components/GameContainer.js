@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Header, Message, Button } from 'semantic-ui-react';
+import { Header, Message, Button } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
@@ -31,7 +31,15 @@ class GameContainer extends React.Component {
 
   endGame = () => {
     this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex)
+    console.log('GAME OVER')
   }
+
+  // newGame = () => {
+  //   return (
+  //     <EndGame correctAnswer={this.props.correctAnswer}/>
+  //   )
+  // }
+
 
   render() {
 
@@ -48,9 +56,7 @@ class GameContainer extends React.Component {
               { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
             </div>
         </Header>
-          <div>
             <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />
-          </div>
         </>
     )
   }
