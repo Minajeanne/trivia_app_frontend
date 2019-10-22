@@ -4,7 +4,7 @@ import { Header, Message, Button } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
-import MyStats from './MyStats.js';
+import MyStatsContainer from './MyStatsContainer.js';
 
 function randomQuestionNumbers(array) {
   let i = array.length - 1;

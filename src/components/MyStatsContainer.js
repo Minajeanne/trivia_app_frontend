@@ -4,7 +4,7 @@ import GameContainer from './GameContainer.js';
 import { getMyStats, updateStats } from '../actions/myStats.js';
 import { Header, Message, Button } from 'semantic-ui-react';
 
-class MyStats extends React.Component {
+class MyStatsContainer extends React.Component {
 
   componentDidMount() {
     this.props.getMyStats(this.props.currentUser)
@@ -41,4 +41,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getMyStats })(MyStats);
+export default connect(mapStateToProps, { getMyStats })(MyStatsContainer);

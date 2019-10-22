@@ -1,4 +1,3 @@
-
 export default (state = {stats: []}, action) => {
   console.log('This is myStats reducer', action)
   switch (action.type) {

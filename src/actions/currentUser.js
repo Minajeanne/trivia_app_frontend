@@ -1,7 +1,6 @@
 import { getMyStats } from "./myStats.js";
 import { resetLoginForm } from "./loginForm.js";
 import { resetSignupForm } from "./signupForm.js";
-// import { getMyTrips, clearTrips } from "./myTrips.js"
 
 // synchronous action creators
 export const setCurrentUser = user => {
@@ -34,8 +33,6 @@ export const login = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          // figure out what to add here **
-          // dispatch(getMyStats())
           dispatch(resetLoginForm())
           history.push('/')
         }
@@ -75,7 +72,6 @@ export const signup = (credentials, history) => {
 export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
-    // dispatch(clearGames())
     return fetch('http://localhost:3001/api/v1/logout', {
       credentials: "include",
       method: "DELETE"
@@ -98,7 +94,6 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          // dispatch(getMyStats())
         }
       })
       .catch(console.log)

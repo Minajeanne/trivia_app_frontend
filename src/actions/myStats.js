@@ -1,14 +1,4 @@
-// synchronous actions
-
-// export const updateStatsSuccess = stats => {
-//   return {
-//     type: "UPDATE_STATS",
-//     stats
-//   }
-// }
-
 // async actions
-
 export const getMyStats = (currentUser) => {
   console.log('You hit your stats action', currentUser)
 
@@ -29,7 +19,6 @@ export const getMyStats = (currentUser) => {
   }
 }
 
-// NEED THIS??
 export const updateStats = (currentUser, score) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {

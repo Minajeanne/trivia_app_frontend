@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-// import users from './reducers/users.js';
 import currentUser from './reducers/currentUser.js';
 import loginForm from './reducers/loginForm.js';
 import signupForm from './reducers/signupForm.js';
@@ -14,7 +13,6 @@ const reducer = combineReducers({
   signupForm,
   myStats,
   questions
-
 })
 
 // const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE || compose;
