@@ -9,7 +9,6 @@ const EndGame = (props) => {
       props.playAgain()
   }
 
-debugger
   return (
     <div>
       <Message color="red">INCORRECT! The answer is {props.correctAnswer}.</Message>

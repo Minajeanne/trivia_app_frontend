@@ -26,11 +26,12 @@ class GameContainer extends React.Component {
     answer: ''
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.inProgress !== this.state.inProgress) {
-      this.setState({ inProgress: false })
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.inProgress !== this.state.inProgress) {
+  //     this.setState({ inProgress: false })
+  //     debugger
+  //   }
+  // }
 
   nextQuestion = () => {
     this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
@@ -38,8 +39,12 @@ class GameContainer extends React.Component {
 
   endGame = (correctAnswer) => {
     this.props.updateStats(parseInt(this.props.currentUser.id), this.state.questionIndex);
+      this.setState({ inProgress: false, answer: correctAnswer })
+  }
 
-    this.setState({ inProgress: false, answer: correctAnswer })
+  playAgain = () => {
+    this.setState({ inProgress: true, questionIndex: 0 });
+      this.nextQuestionOrEndGame();
   }
 
   nextQuestionOrEndGame = () => {
@@ -51,10 +56,9 @@ class GameContainer extends React.Component {
     if (this.state.inProgress === true) {
       return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
       } else {
-      return <EndGame correctAnswer={this.state.answer} playAgain={this.nextQuestionOrEndGame} inProgress={this.state.inProgress}/>;
+      return <EndGame correctAnswer={this.state.answer} playAgain={this.playAgain} />;
     }
   }
-
 
   render() {
     return (
