@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Header, Message, Button } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
-import MyStatsContainer from './MyStatsContainer.js';
+// import MyStatsContainer from './MyStatsContainer.js';
 
 function randomQuestionNumbers(array) {
   let i = array.length - 1;
-  for (i; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
+    for (i; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
   return array;
 }
 

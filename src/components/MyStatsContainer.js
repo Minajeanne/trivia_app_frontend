@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import GameContainer from './GameContainer.js';
+// import GameContainer from './GameContainer.js';
 import { getMyStats, updateStats } from '../actions/myStats.js';
-import { Header, Message, Button } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 
 class MyStatsContainer extends React.Component {
 

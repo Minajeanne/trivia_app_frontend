@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Message, Button } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 const Questions = (props) => {
   let answerChoices = []

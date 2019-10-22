@@ -1,4 +1,4 @@
-import { getMyStats } from "./myStats.js";
+// import { getMyStats } from "./myStats.js";
 import { resetLoginForm } from "./loginForm.js";
 import { resetSignupForm } from "./signupForm.js";
 
@@ -60,7 +60,6 @@ export const signup = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          // dispatch(getMyGames())
           dispatch(resetSignupForm())
           history.push('/')
         }
