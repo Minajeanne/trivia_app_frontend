@@ -1,4 +1,3 @@
-// import { FETCH_QUESTIONS } from '../actions/questions.js';
 
 export default (state = {questions: []}, action) => {
     console.log(action)

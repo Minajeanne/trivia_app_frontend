@@ -7,10 +7,6 @@ import Logout from './Logout.js';
 
 const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
 
-  // const handleClick = () => {
-  //   getMyStats(currentUser)
-  // }
-
   return (
     <div className="NavBar">
       <NavLink exact activeClassName="active" to="/stats">My Stats</NavLink><br></br>

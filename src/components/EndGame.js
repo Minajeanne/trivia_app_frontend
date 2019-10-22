@@ -1,12 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { Message, Button } from 'semantic-ui-react';
 
-const EndGame = ({correctAnswer}) => {
+const EndGame = (props) => {
 
+ const handleClick = () => {
+      props.playAgain()
+  }
+
+debugger
   return (
     <div>
-      <Message color="red">INCORRECT! The answer is {correctAnswer}. Click <strong>New Game</strong> to play again.</Message>
+      <Message color="red">INCORRECT! The answer is {props.correctAnswer}.</Message>
+      <Button onClick={handleClick}>Play Again?</Button>
     </div>
   )
 }
