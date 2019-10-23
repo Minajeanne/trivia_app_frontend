@@ -4,7 +4,6 @@ export const fetchQuestions = () => {
     })
       .then(r => r.json())
       .then(fetchedQuestions => {
-        console.log('Your next question is:', fetchedQuestions)
           dispatch({ type: 'FETCH_QUESTIONS', fetchedQuestions})
         }
       )

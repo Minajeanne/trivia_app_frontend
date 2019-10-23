@@ -25,7 +25,6 @@ class GameContainer extends React.Component {
     inProgress: true,
     answer: ''
   }
-
   // componentDidUpdate(prevProps, prevState) {
   //   if (prevState.inProgress !== this.state.inProgress) {
   //     this.setState({ inProgress: false })
@@ -52,6 +51,8 @@ class GameContainer extends React.Component {
     const { questions } = this.props
     const newQuestions = randomQuestionNumbers(questions)
     const { userStats } = this.state.questionIndex
+    // const cutQuestions = questions.replace(/&quote;/gi, "")
+// debugger
 
     if (this.state.inProgress === true) {
       return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
