@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 5px;
 }
 
 .App-logo {
@@ -18,5 +19,25 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #black;
+}
+
+.NavBar {
+  font-size: 20px;
+  color: black;
+}
+
+body {
+  background-color: #f0f5fa;
+  background-image:url('/public/images/evan-dennis-i--IN3cvEjg-unsplash.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+	background-attachment:fixed;
+    background-position: left top;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

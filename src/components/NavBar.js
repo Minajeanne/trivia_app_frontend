@@ -2,18 +2,37 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { fetchQuestions } from '../actions/questions.js';
-// import { getMyStats } from '../actions/myStats.js';
 import Logout from './Logout.js';
 
 const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
 
   return (
-    <div className="NavBar">
-      <NavLink exact activeClassName="active" to="/stats">My Stats</NavLink><br></br>
-      <NavLink exact activeClassName="active" to="/games/new" onClick={fetchQuestions}>New Game</NavLink><br></br>
+    <div className="NavBar" as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "black", fontSize: '25px'}}>
       { loggedIn ? <> <p id="loggedin"><br></br>
-        Welcome,  {currentUser.attributes.username}!</p><br></br>
-        <Logout /><br></br></> : null}
+      <strong>  Welcome,  {currentUser.attributes.username}!</strong></p><br></br>
+        <Logout /><br></br></> : null }
+          <NavLink
+            as="h2"
+            textAlign="center"
+            style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '25px'}}
+            exact
+            activeClassName="selected"
+            activeStyle={{ fontWeight: "bold", color: "black" }}
+            to="/stats">My Stats
+          </NavLink>
+          <br></br>
+          <br></br>
+          <NavLink
+            as="h2"
+            textAlign="center"
+            style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '25px'}}
+            exact
+            activeClassName="selected"
+            activeStyle={{ fontWeight: "bold", color: "black" }}
+            to="/games/new"
+            onClick={fetchQuestions}>New Game
+          </NavLink>
+          <br></br>
     </div>
   )
 }

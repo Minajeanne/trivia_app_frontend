@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
 import { Message, Button } from 'semantic-ui-react';
 
 const EndGame = (props) => {
@@ -11,8 +10,12 @@ const EndGame = (props) => {
 
   return (
     <div>
-      <Message color="red">INCORRECT! The answer is {props.correctAnswer}.</Message>
-      <Button onClick={handleClick}>Play Again?</Button>
+      <Message color="red">
+        INCORRECT! The answer is {props.correctAnswer}.
+      </Message>
+      <Button onClick={handleClick}>
+        Play Again?
+      </Button>
     </div>
   )
 }

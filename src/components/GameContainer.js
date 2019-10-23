@@ -62,7 +62,7 @@ class GameContainer extends React.Component {
 
   render() {
     return (
-      <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px' }}>
+      <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "green", fontSize: '35px' }}>
         Total Correct
           <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
             { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
