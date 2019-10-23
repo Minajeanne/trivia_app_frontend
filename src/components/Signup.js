@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateSignupForm } from '../actions/signupForm.js';
 import { signup } from '../actions/currentUser.js';
+import { Button, Form } from 'semantic-ui-react';
 
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
@@ -21,11 +22,25 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input placeholder="username" value={signupFormData.username} name="username" type="text" onChange={handleUserInfoInputChange} />
-      <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleUserInfoInputChange} />
-      <input type="submit" value="Sign Up"/>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group widths="equal">
+        <Form.Input
+        fluid
+         placeholder="username"
+         value={signupFormData.username}
+         name="username"
+         onChange={handleUserInfoInputChange}
+        />
+      <Form.Input
+        fluid
+        placeholder="password"
+        value={signupFormData.password}
+        name="password"
+        onChange={handleUserInfoInputChange}
+        />
+      </Form.Group>
+      <Form.Button content="Sign Up" value="Sign Up"/>
+    </Form>
   )
 }
 

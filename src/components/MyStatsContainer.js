@@ -16,14 +16,13 @@ class MyStatsContainer extends React.Component {
 
     return (
       <div>
-
         <Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '35px'}}>
           Your Top Score:
         </Header>
           <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
           {userPr ?
               <div className="main-number">{userPr}</div>
-              :
+            :
               <div className="subtext">You've yet to answer any questions correctly!</div>
           }
           </div>
