@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateLoginForm } from '../actions/loginForm.js';
 import { login } from '../actions/currentUser.js';
-import { Button, Form } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 // import PropTypes from 'prop-types'
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
@@ -36,6 +36,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
         placeholder="password"
         value={loginFormData.password}
         name="password"
+        type="password"
         onChange={handleInputChange}
         />
       </Form.Group>

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from "../actions/currentUser.js";
 import { withRouter } from 'react-router-dom';
-import { Button, Form } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 
 const Logout = ({ logout, history }) => {

@@ -1,5 +1,6 @@
+// functional component
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import { Message, Button } from 'semantic-ui-react';
 
 const EndGame = (props) => {

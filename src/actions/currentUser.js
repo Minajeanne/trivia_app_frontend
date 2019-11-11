@@ -1,4 +1,3 @@
-// import { getMyStats } from "./myStats.js";
 import { resetLoginForm } from "./loginForm.js";
 import { resetSignupForm } from "./signupForm.js";
 
