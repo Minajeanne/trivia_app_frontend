@@ -36,6 +36,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
         placeholder="password"
         value={signupFormData.password}
         name="password"
+        type="password"
         onChange={handleUserInfoInputChange}
         />
       </Form.Group>
