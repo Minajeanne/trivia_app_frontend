@@ -24,19 +24,31 @@ const Questions = (props) => {
         } else {
            rand = Math.floor(Math.random() * 4);
            answerChoices.splice(rand, 0, correctAnswer)
-       }
-     }
+         }
+   }
 
       return (
         props.question ?
           <div>
-            <Header as="h2" textAlign="center" style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}>
-              <Icon name="question circle" size="small" />
-                <Header.Content>Category:  { props.question.category }</Header.Content>
+            <Header
+              as="h2"
+              textAlign="center"
+              style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}
+              >
+                <Icon name="question circle" size="small" />
+                  <Header.Content>
+                    Category:  { props.question.category }
+                  </Header.Content>
             </Header>
 
-            <Header as="h1" textAlign="center" style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}>
-              <Header.Content>{ props.question.question }</Header.Content>
+            <Header
+              as="h1"
+              textAlign="center"
+              style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}
+              >
+              <Header.Content>
+              { props.question.question }
+              </Header.Content>
             </Header>
 
             <Divider section />

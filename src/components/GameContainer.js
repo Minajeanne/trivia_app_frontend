@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Header, Label } from 'semantic-ui-react';
+import { Header, Label, Divider } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
@@ -70,10 +70,19 @@ class GameContainer extends React.Component {
   render() {
     return (
       <>
-        <Header as="h2" textAlign="center" style={{ fontFamily: 'Shadows Into Light, cursive', color: "green"}}>
+        <Header
+          as="h2"
+          textAlign="center"
+          style={{ fontFamily: 'Shadows Into Light, cursive', color: "green"}}
+          >
           Total Correct
-            <div style={{ fontFamily: 'Shadows Into Light, cursive'}}>
-              <Label circular color="green" size="huge">
+            <div
+              style={{ fontFamily: 'Shadows Into Light, cursive'}}
+              >
+              <Label
+                circular color="green"
+                size="huge"
+                >
                 { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
               </Label>
             </div>
@@ -82,7 +91,6 @@ class GameContainer extends React.Component {
         <div>
           {this.nextQuestionOrEndGame()}
         </div>
-
       </>
     )
   }
