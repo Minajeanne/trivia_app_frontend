@@ -54,20 +54,20 @@ const Questions = (props) => {
 
             <Divider section />
 
-              {answerChoices.map(choice => (
-                <Button
-                  basic color="green"
-                  style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
-                  value={choice}
-                  onClick={handleClick}>
-                  { choice }
-                </Button>
-              )
+            {answerChoices.map(choice => (
+              <Button
+                basic color="green"
+                style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
+                value={choice}
+                onClick={handleClick}>
+                { choice }
+              </Button>
             )
-          }
-        </div>
-      : null
-    )
+          )
+        }
+      </div>
+    : null
+  )
 }
 
 export default Questions;

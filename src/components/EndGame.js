@@ -1,7 +1,7 @@
 // functional component
 import React from 'react';
 // import { connect } from 'react-redux';
-import { Message, Button } from 'semantic-ui-react';
+import { Message, Button, Icon } from 'semantic-ui-react';
 
 const EndGame = (props) => {
 
@@ -11,10 +11,18 @@ const EndGame = (props) => {
 
   return (
     <div>
-      <Message color="red">
-        INCORRECT! The answer is {props.correctAnswer}.
+      <Message
+        color="red"
+        style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px"}}
+        >
+        <Icon name="frown outline" size="huge" textAlign="center"/>
+          The correct answer is <strong>{props.correctAnswer}</strong>
       </Message>
-      <Button onClick={handleClick}>
+
+      <Button
+        basic color="green"
+        style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
+        onClick={handleClick}>
         Play Again?
       </Button>
     </div>
