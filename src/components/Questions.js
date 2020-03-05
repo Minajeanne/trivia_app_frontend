@@ -1,7 +1,6 @@
 // functional component
 import React from 'react';
-// import { connect } from 'react-redux';
-import { Button } from 'semantic-ui-react';
+import { Button, Segment } from 'semantic-ui-react';
 
 const Questions = (props) => {
   let answerChoices = []
@@ -35,7 +34,16 @@ const Questions = (props) => {
               <h2><strong>{ props.question.question }</strong></h2>
 
                 {answerChoices.map(choice => (
-                  <Button value={choice} onClick={handleClick}>{ choice }</Button>))}
+                  <Segment inverted>
+                    <Button inverted color='green'
+                      value={choice}
+                        onClick={handleClick}>
+                        { choice }
+                      </Button>
+                    </Segment>
+                  )
+                )
+              }
           </div>
         : null
       )
