@@ -75,17 +75,17 @@ class GameContainer extends React.Component {
           textAlign="center"
           style={{ fontFamily: 'Shadows Into Light, cursive', color: "green"}}
           >
-          Total Correct
-            <div
-              style={{ fontFamily: 'Shadows Into Light, cursive'}}
-              >
-              <Label
-                circular color="green"
-                size="huge"
+            Total Correct
+              <div
+                style={{ fontFamily: 'Shadows Into Light, cursive'}}
                 >
-                { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
-              </Label>
-            </div>
+                <Label
+                  circular color="green"
+                  size="huge"
+                  >
+                  { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
+                </Label>
+              </div>
         </Header>
 
         <div>
