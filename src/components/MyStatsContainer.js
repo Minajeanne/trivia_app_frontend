@@ -16,10 +16,13 @@ class MyStatsContainer extends React.Component {
     return (
       <div>
         <br></br>
-        <Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "gold", fontSize: '35px'}}>
-          Your Top Score
+        <Header
+          as="h2"
+          textAlign="center"
+          style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "35px" }}>
+            Your Top Score
         </Header>
-          <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
+          <div style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "30px" }}>
           {userPr ?
               <div className="main-number">{userPr}</div>
             :

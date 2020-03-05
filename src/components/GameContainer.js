@@ -72,7 +72,7 @@ class GameContainer extends React.Component {
       <>
         <Header as="h2" textAlign="center" style={{ fontFamily: 'Shadows Into Light, cursive', color: "green"}}>
           Total Correct
-            <div style={{ fontFamily: 'Shadows Into Light, cursive', fontSize: '30px' }}>
+            <div style={{ fontFamily: 'Shadows Into Light, cursive'}}>
               <Label circular color="green" size="huge">
                 { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
               </Label>
