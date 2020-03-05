@@ -61,17 +61,6 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
     <Divider vertical>Or</Divider>
   </Segment>
-
-      // <Grid.Column>
-      //   <Form.Input
-      //     required
-      //     fluid
-      //     placeholder="password"
-      //     value={loginFormData.password}
-      //     name="password"
-      //     type="password"
-      //     onChange={handleInputChange}
-      //     />
   )
 }
 

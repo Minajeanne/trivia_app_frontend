@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateSignupForm } from '../actions/signupForm.js';
 import { signup } from '../actions/currentUser.js';
-import { Form } from 'semantic-ui-react';
+import { Form, Grid, Segment, Icon, Button } from 'semantic-ui-react';
 
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
@@ -22,26 +22,36 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group widths="equal">
-        <Form.Input
-        fluid
-         placeholder="username"
-         value={signupFormData.username}
-         name="username"
-         onChange={handleUserInfoInputChange}
-        />
-      <Form.Input
-        fluid
-        placeholder="password"
-        value={signupFormData.password}
-        name="password"
-        type="password"
-        onChange={handleUserInfoInputChange}
-        />
-      </Form.Group>
-      <Form.Button content="Sign Up" value="Sign Up"/>
-    </Form>
+    <Segment placeholder>
+      <Grid columns={2} relaxed="very" stackable>
+        <Grid.Column>
+          <Form onSubmit={handleSubmit}>
+            <Form.Input
+            required
+            icon="user"
+            iconPosition="left"
+            label="Username"
+             placeholder="username"
+             value={signupFormData.username}
+             name="username"
+             onChange={handleUserInfoInputChange}
+            />
+          <Form.Input
+            requried
+            icon="lock"
+            iconPosition="left"
+            label="Password"
+            placeholder="password"
+            value={signupFormData.password}
+            name="password"
+            type="password"
+            onChange={handleUserInfoInputChange}
+            />
+            <Button content="Sign Up" value="Sign Up"/>
+          </Form>
+        </Grid.Column>
+      </Grid>
+  </Segment>
   )
 }
 
@@ -52,3 +62,7 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { updateSignupForm, signup })(Signup);
+// error={{
+//   content: 'Please enter a valid password',
+//   pointing: 'below',
+// }}
