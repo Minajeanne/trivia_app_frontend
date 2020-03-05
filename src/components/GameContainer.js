@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Header } from 'semantic-ui-react';
+import { Header, Label } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
@@ -54,23 +54,35 @@ class GameContainer extends React.Component {
     // const cutQuestions = questions.replace(/&quote;/gi, "")
 
     if (this.state.inProgress === true) {
-      return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
-      } else {
-      return <EndGame correctAnswer={this.state.answer} playAgain={this.playAgain} />;
+      return <Questions
+              question={newQuestions[this.state.questionIndex]}
+              nextQuestion={this.nextQuestion}
+              endGame={this.endGame}
+              />;
+    } else {
+      return <EndGame
+              correctAnswer={this.state.answer}
+              playAgain={this.playAgain}
+              />;
     }
   }
 
   render() {
     return (
-      <><Header as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "green", fontSize: '35px' }}>
-        Total Correct
-          <div style={{ fontFamily: 'OCR A Std, monospace', fontSize: '30px' }}>
-            { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
-          </div>
-      </Header>
+      <>
+        <Header as="h2" textAlign="center" style={{ fontFamily: 'Shadows Into Light, cursive', color: "green", fontSize: '35px' }}>
+          Total Correct
+            <div style={{ fontFamily: 'Shadows Into Light, cursive', fontSize: '30px' }}>
+              <Label circular color="green" size="huge">
+                { this.props.total_correct ? this.props.total_correct : this.state.questionIndex }
+              </Label>
+            </div>
+        </Header>
+
         <div>
           {this.nextQuestionOrEndGame()}
         </div>
+
       </>
     )
   }
