@@ -29,19 +29,19 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
         <Grid.Column>
           <Form onSubmit={handleSubmit}>
             <Form.Input
-            required
             icon="user"
             iconPosition="left"
             label="Username"
+            name="username"
              placeholder="username"
              value={loginFormData.username}
              onChange={handleInputChange}
           />
           <Form.Input
-            required
             icon="lock"
             iconPosition="left"
             label="Password"
+            name="password"
              placeholder="password"
              value={loginFormData.password}
              onChange={handleInputChange}

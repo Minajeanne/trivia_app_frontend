@@ -20,45 +20,23 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
         textAlign="center"
         style={{ fontFamily: "Shadows Into Light, cursive", color: "black", fontSize: '35px'}}
         >
-
-        { loggedIn ? <p id="loggedin">Welcome,  {currentUser.attributes.username}!</p> : null }
+          { loggedIn ? <p id="loggedin">Welcome,  {currentUser.attributes.username}!</p> : null }
 
         <div align="left">
           <MyStatsContainer />
         </div>
 
-        <Segment>
-        <Grid columns={2} relaxed="very" stackable>
-          <Grid.Column>
-            <NavLink
-              as="h2"
-              textAlign="center"
-              style={{ fontFamily: "Shadows Into Light, cursive", color: "black", fontSize: "30px"}}
-              exact
-              activeClassName="selected"
-              activeStyle={{ fontWeight: "bold", color: "green" }}
-              to="/stats">
-                My Stats
-            </NavLink>
-          </Grid.Column>
-
-          <Grid.Column>
-            <NavLink
-              as="h2"
-              textAlign="center"
-              style={{ fontFamily: "Shadows Into Light, cursive", color: "black", fontSize: "30px"}}
-              exact
-              activeClassName="selected"
-              activeStyle={{ fontWeight: "bold", color: "green" }}
-              to="/games/new"
-              onClick={fetchQuestions}>
-                New Game
-            </NavLink>
-          </Grid.Column>
-        </Grid>
-
-          <Divider vertical>Or</Divider>
-        </Segment>
+        <NavLink
+          as="h2"
+          textAlign="center"
+          style={{ fontFamily: "Shadows Into Light, cursive", color: "black", fontSize: "30px"}}
+          exact
+          activeClassName="selected"
+          activeStyle={{ fontWeight: "bold", color: "green" }}
+          to="/games/new"
+          onClick={fetchQuestions}>
+            New Game
+        </NavLink>
       </nav>
     </>
   )
