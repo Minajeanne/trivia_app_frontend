@@ -32,14 +32,14 @@ const Questions = (props) => {
           <div>
             <Header
               as="h1"
-              textAlign="center"
+              textAlign="left"
               style={{ display: 'flex',  justifyContent:'center', alignItems:'center', fontFamily: "Shadows Into Light, cursive", color: "black" }}
               >
-              <Icon name="settings" />
-              <Header.Content>
-                Category:
-                  <Header.Subheader>{ props.question.category }</Header.Subheader>
-              </Header.Content>
+              <Icon name="cog" size="small"/>
+                <Header.Content>
+                  Category:
+                    <Header.Subheader>{ props.question.category }</Header.Subheader>
+                </Header.Content>
             </Header>
 
             <Header
