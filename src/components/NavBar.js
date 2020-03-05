@@ -14,23 +14,25 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
           <NavLink
             as="h2"
             textAlign="center"
-            style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '25px'}}
+            style={{ fontFamily: "Shadows Into Light, cursive", color: "black"}}
             exact
             activeClassName="selected"
-            activeStyle={{ fontWeight: "bold", color: "black" }}
-            to="/stats">My Stats
+            activeStyle={{ fontWeight: "bold", color: "green" }}
+            to="/stats">
+              My Stats
           </NavLink>
           <br></br>
           <br></br>
           <NavLink
             as="h2"
             textAlign="center"
-            style={{ fontFamily: 'OCR A Std, monospace', color: "grey", fontSize: '25px'}}
+            style={{ fontFamily: "Shadows Into Light, cursive", color: "black"}}
             exact
             activeClassName="selected"
-            activeStyle={{ fontWeight: "bold", color: "black" }}
+            activeStyle={{ fontWeight: "bold", color: "green" }}
             to="/games/new"
-            onClick={fetchQuestions}>New Game
+            onClick={fetchQuestions}>
+              New Game
           </NavLink>
           <br></br>
     </div>
