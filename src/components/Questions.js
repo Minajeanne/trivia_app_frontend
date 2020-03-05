@@ -31,14 +31,15 @@ const Questions = (props) => {
         props.question ?
           <div>
             <Header
-              as="h2"
+              as="h1"
               textAlign="center"
-              style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}
+              style={{ display: 'flex',  justifyContent:'center', alignItems:'center', fontFamily: "Shadows Into Light, cursive", color: "black" }}
               >
-                <Icon name="question circle" size="small" />
-                  <Header.Content>
-                    Category:  { props.question.category }
-                  </Header.Content>
+              <Icon name="settings" />
+              <Header.Content>
+                Category:
+                  <Header.Subheader>{ props.question.category }</Header.Subheader>
+              </Header.Content>
             </Header>
 
             <Header
@@ -47,14 +48,15 @@ const Questions = (props) => {
               style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}
               >
               <Header.Content>
-              { props.question.question }
+                { props.question.question }
               </Header.Content>
             </Header>
 
             <Divider section />
 
               {answerChoices.map(choice => (
-                <Button basic color="green"
+                <Button
+                  basic color="green"
                   style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
                   value={choice}
                   onClick={handleClick}>
