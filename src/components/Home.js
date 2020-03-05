@@ -1,14 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { Header } from 'semantic-ui-react';
+import Login from './Login.js';
+import Signup from './Signup.js';
 
 const Home = () => (
   <div>
-    <h2 style={{ fontFamily: 'OCR A Std, monospace', color: "black", fontSize: '35px'}}>TRIVIA APP</h2>
-      <h4 style={{ fontFamily: 'OCR A Std, monospace', color: "black", fontSize: '15px'}}>Let's play!</h4>
-        <span>
-          <Link to="/login">Log In</Link> or <Link to="/signup">Sign Up</Link>
-        </span>
+    <Header
+      as="h2"
+      textAlign="center"
+      style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "60px"}}
+      >
+      <Header.Content>
+        TRIVIA APP
+          <Header.Subheader>Let's Play!</Header.Subheader>
+      </Header.Content>
+    </Header>
+
+    <div>
+      <Login />
+    </div>
   </div>
 );
 
 export default Home;
+  // <Link to="/login">Log In</Link> or <Link to="/signup">Sign Up</Link>

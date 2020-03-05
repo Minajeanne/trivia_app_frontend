@@ -4,7 +4,6 @@ import { Header, Label, Divider } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
-// import MyStatsContainer from './MyStatsContainer.js';
 
 function randomQuestionNumbers(array) {
   let i = array.length - 1;
@@ -73,11 +72,11 @@ class GameContainer extends React.Component {
         <Header
           as="h2"
           textAlign="center"
-          style={{ fontFamily: 'Shadows Into Light, cursive', color: "green"}}
+          style={{ fontFamily: "Shadows Into Light, cursive", color: "green"}}
           >
             Total Correct
               <div
-                style={{ fontFamily: 'Shadows Into Light, cursive'}}
+                style={{ fontFamily: "Shadows Into Light, cursive"}}
                 >
                 <Label
                   circular color="green"
