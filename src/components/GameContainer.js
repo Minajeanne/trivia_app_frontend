@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Header, Label, Divider } from 'semantic-ui-react';
+import { Header, Label, Divider, Container } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
@@ -69,6 +69,7 @@ class GameContainer extends React.Component {
   render() {
     return (
       <>
+      <Container style={{ margin: "10px", padding: "50px" }}>
         <Header
           as="h2"
           textAlign="center"
@@ -86,7 +87,7 @@ class GameContainer extends React.Component {
                 </Label>
               </div>
         </Header>
-
+      </Container>
         <div>
           {this.nextQuestionOrEndGame()}
         </div>

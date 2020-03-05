@@ -32,10 +32,10 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
           style={{ fontFamily: "Shadows Into Light, cursive", color: "black", fontSize: "30px"}}
           exact
           activeClassName="selected"
-          activeStyle={{ fontWeight: "bold", color: "green" }}
+          activeStyle={{ fontWeight: "bold", color: "red" }}
           to="/games/new"
           onClick={fetchQuestions}>
-            New Game
+            Start a New Game
         </NavLink>
       </nav>
     </>

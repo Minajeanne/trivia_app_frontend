@@ -50,7 +50,7 @@ class MyStatsContainer extends React.Component {
             <Header
               as="h2"
               textAlign="left"
-              style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
+              style={{ fontFamily: "Shadows Into Light, cursive", color: "purple", fontSize: "30px" }}
               block
               >
               <Icon name="chess queen" />
