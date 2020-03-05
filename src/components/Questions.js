@@ -31,7 +31,7 @@ const Questions = (props) => {
         props.question ?
           <div>
             <Header as="h2" textAlign="center" style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}>
-              <Icon name="question circle" />
+              <Icon name="question circle" size="small" />
                 <Header.Content>Category:  { props.question.category }</Header.Content>
             </Header>
 
@@ -42,20 +42,18 @@ const Questions = (props) => {
             <Divider section />
 
               {answerChoices.map(choice => (
-                <Segment inverted>
-                  <Button inverted color="green"
-                    style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
-                    value={choice}
-                    onClick={handleClick}>
-                    { choice }
-                  </Button>
-                </Segment>
-                )
+                <Button basic color="green"
+                  style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
+                  value={choice}
+                  onClick={handleClick}>
+                  { choice }
+                </Button>
               )
-            }
-          </div>
-        : null
-      )
+            )
+          }
+        </div>
+      : null
+    )
 }
 
 export default Questions;

@@ -1,16 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Button, Menu } from 'react-router-dom';
 import { fetchQuestions } from '../actions/questions.js';
 import Logout from './Logout.js';
 
 const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
 
   return (
-    <div className="NavBar" as="h2" textAlign="center" style={{ fontFamily: 'OCR A Std, monospace', color: "black", fontSize: '25px'}}>
-      { loggedIn ? <> <p id="loggedin"><br></br>
-      <strong>  Welcome,  {currentUser.attributes.username}!</strong></p><br></br>
-        <Logout /><br></br></> : null }
+    <div
+      className="NavBar"
+      as="h2"
+      textAlign="center"
+      style={{ fontFamily: "Shadows Into Light, cursive", color: "black", fontSize: '30px'}}
+      >
+      { loggedIn ? <p id="loggedin">Welcome,  {currentUser.attributes.username}!</p> : null }
+
           <NavLink
             as="h2"
             textAlign="center"
@@ -21,8 +25,7 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
             to="/stats">
               My Stats
           </NavLink>
-          <br></br>
-          <br></br>
+
           <NavLink
             as="h2"
             textAlign="center"
@@ -34,7 +37,8 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
             onClick={fetchQuestions}>
               New Game
           </NavLink>
-          <br></br>
+
+          <Logout />
     </div>
   )
 }

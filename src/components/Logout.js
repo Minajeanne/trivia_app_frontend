@@ -2,34 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from "../actions/currentUser.js";
 import { withRouter } from 'react-router-dom';
-import { Form } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 
 
 const Logout = ({ logout, history }) => {
 
   return (
-    <Form onSubmit={(event) => {
-        event.preventDefault()
+    <Button
+      circular icon="sign-out"
+      style={{ fontFamily: "Shadows Into Light, cursive", color: "red"}}
+      content="Log Out"
+      onClick={(e) => {e.preventDefault()
         logout()
         history.push('/')
       }
     }>
-      <Form.Button content="Log Out" value="Log Out"/>
-    </Form>
+    </Button>
   )
 }
 
 export default withRouter(connect(null, { logout } )(Logout));
 
-// const Logout = ({ logout, history }) => {
-//   return (
-//     <form onSubmit={(event) => {
-//         event.preventDefault()
-//         logout()
-//         history.push('/')
-//       }
-//     }>
-//       <input type="submit" value="Log Out"/>
-//     </form>
-//   )
-// }
+    // <Form.Button content="Log Out" value="Log Out"/>
