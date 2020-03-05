@@ -52,7 +52,6 @@ class GameContainer extends React.Component {
     const newQuestions = randomQuestionNumbers(questions)
     const { userStats } = this.state.questionIndex
     // const cutQuestions = questions.replace(/&quote;/gi, "")
-// debugger
 
     if (this.state.inProgress === true) {
       return <Questions question={newQuestions[this.state.questionIndex]} nextQuestion={this.nextQuestion} endGame={this.endGame} />;
