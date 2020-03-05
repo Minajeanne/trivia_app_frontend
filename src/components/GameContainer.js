@@ -70,7 +70,7 @@ class GameContainer extends React.Component {
   render() {
     return (
       <>
-        <Header as="h2" textAlign="center" style={{ fontFamily: 'Shadows Into Light, cursive', color: "green", fontSize: '35px' }}>
+        <Header as="h2" textAlign="center" style={{ fontFamily: 'Shadows Into Light, cursive', color: "green"}}>
           Total Correct
             <div style={{ fontFamily: 'Shadows Into Light, cursive', fontSize: '30px' }}>
               <Label circular color="green" size="huge">
