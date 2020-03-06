@@ -1,22 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Header } from 'semantic-ui-react';
+import { Header, Container } from 'semantic-ui-react';
 import Login from './Login.js';
 import Signup from './Signup.js';
 
 const Home = () => (
   <div>
-    <Header
-      as="h2"
-      textAlign="center"
-      style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "60px"}}
-      >
-      <Header.Content>
-        TRIVIA APP
-          <Header.Subheader>Let's Play!</Header.Subheader>
-      </Header.Content>
-    </Header>
-
+    <Container style={{ margin: "10px", padding: "50px" }}>
+      <Header
+        as="h2"
+        textAlign="center"
+        style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "60px"}}
+        >
+        <Header.Content>
+          TRIVIA APP
+            <Header.Subheader>
+              <strong>Let's Play!</strong>
+            </Header.Subheader>
+        </Header.Content>
+      </Header>
+    </Container>
     <div>
       <Login />
     </div>

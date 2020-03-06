@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Menu, Button, Divider, Segment, Grid } from 'semantic-ui-react';
+import { Menu, Button, Divider, Segment, Grid, Icon } from 'semantic-ui-react';
 import { fetchQuestions } from '../actions/questions.js';
 import Logout from './Logout.js';
 import MyStatsContainer from './MyStatsContainer.js';
@@ -29,13 +29,15 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
         <NavLink
           as="h2"
           textAlign="center"
-          style={{ fontFamily: "Shadows Into Light, cursive", color: "black", fontSize: "30px"}}
+          style={{ fontFamily: "Shadows Into Light, cursive", color: "red", fontSize: "30px"}}
           exact
           activeClassName="selected"
-          activeStyle={{ fontWeight: "bold", color: "red" }}
+          activeStyle={{ fontWeight: "bold", color: "black" }}
           to="/games/new"
           onClick={fetchQuestions}>
-            Start a New Game
+            <Icon name="angle double right" />
+              Start a New Game
+            <Icon name="angle double left" />
         </NavLink>
       </nav>
     </>

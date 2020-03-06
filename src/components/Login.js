@@ -27,13 +27,16 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     <Segment placeholder>
       <Grid columns={2} relaxed="very" stackable>
         <Grid.Column>
-          <Form onSubmit={handleSubmit}>
+          <Form
+            onSubmit={handleSubmit}
+            basic color="green"
+            style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
+            >
             <Form.Input
             icon="user"
             iconPosition="left"
             label="Username"
             name="username"
-             placeholder="username"
              value={loginFormData.username}
              onChange={handleInputChange}
           />
@@ -42,18 +45,30 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
             iconPosition="left"
             label="Password"
             name="password"
-             placeholder="password"
+            type="password"
              value={loginFormData.password}
              onChange={handleInputChange}
           />
-          <Button content="Log In" value="Log In" primary/>
+          <Button
+            basic color="green"
+            style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
+            content="Log In"
+            value="Log In"
+            >
+              Log In
+            </Button>
         </Form>
       </Grid.Column>
 
       <Grid.Column verticalAlign='middle'>
         <Link to="/signup">
-          <Button icon='signup' size='big'>
-            Sign Up
+          <Button
+            icon='signup'
+            size='big'
+            basic color="green"
+            style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
+            >
+              Sign Up
           </Button>
         </Link>
       </Grid.Column>
