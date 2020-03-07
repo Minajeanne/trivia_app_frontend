@@ -27,22 +27,22 @@ class MyStatsContainer extends React.Component {
               <Icon name="trophy" />
                 <Header.Content>
                   Your Top Score
-                      <div>
-                        {userPr ?
-                          <div
-                            className="main-number"
-                            style={{color: "black", fontSize: "30px"}}
-                            >
-                              {userPr}
-                          </div>
-                        :
-                          <div
-                            className="subtext"
-                            >
-                              You've yet to answer any questions correctly!
-                          </div>
-                        }
-                      </div>
+                    <div>
+                      {userPr ?
+                        <div
+                          className="main-number"
+                          style={{color: "black", fontSize: "30px"}}
+                          >
+                            {userPr}
+                        </div>
+                      :
+                        <div
+                          className="subtext"
+                          >
+                            You've yet to answer any questions correctly!
+                        </div>
+                      }
+                    </div>
                 </Header.Content>
               </Header>
           </Grid.Column>

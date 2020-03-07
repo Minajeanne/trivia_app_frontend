@@ -4,6 +4,8 @@ import { Header, Label, Divider, Container } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
+import Leaderboard from './Leaderboard.js';
+import anime from 'animejs/lib/anime.es.js';
 
 function randomQuestionNumbers(array) {
   let i = array.length - 1;
@@ -30,7 +32,6 @@ class GameContainer extends React.Component {
   //     debugger
   //   }
   // }
-
   nextQuestion = () => {
     this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
   }

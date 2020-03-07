@@ -1,6 +1,6 @@
 // functional component
 import React from 'react';
-import { Button, Segment, Header, Icon, Divider } from 'semantic-ui-react';
+import { Button, Segment, Header, Icon, Divider, Transition } from 'semantic-ui-react';
 
 const Questions = (props) => {
   let answerChoices = []
@@ -35,13 +35,14 @@ const Questions = (props) => {
               textAlign="left"
               style={{ display: 'flex',  justifyContent:'center', alignItems:'center', fontFamily: "Shadows Into Light, cursive", color: "black" }}
               >
-              <Icon name="cog" size="small"/>
-                <Header.Content>
-                  Category:
-                    <Header.Subheader>{ props.question.category }</Header.Subheader>
-                </Header.Content>
-            </Header>
 
+                <Icon id="spinning" name="cog" size="small"/>
+
+            <Header.Content>
+              Category:
+                <Header.Subheader>{ props.question.category }</Header.Subheader>
+            </Header.Content>
+          </Header>
             <Header
               as="h1"
               textAlign="center"
