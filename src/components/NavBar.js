@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Menu, Button, Divider, Segment, Grid, Icon } from 'semantic-ui-react';
+import { Button, Divider, Segment, Grid, Icon, Transition } from 'semantic-ui-react';
 import { fetchQuestions } from '../actions/questions.js';
 import Logout from './Logout.js';
 import MyStatsContainer from './MyStatsContainer.js';
@@ -35,9 +35,11 @@ const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
           activeStyle={{ fontWeight: "bold", color: "black" }}
           to="/games/new"
           onClick={fetchQuestions}>
-            <Icon name="angle double right" />
-              Start a New Game
-            <Icon name="angle double left" />
+            <Transition name="flash">
+              <Icon name="angle double right" />
+                Start a New Game
+              <Icon name="angle double left" />
+            </Transition>
         </NavLink>
       </nav>
     </>
