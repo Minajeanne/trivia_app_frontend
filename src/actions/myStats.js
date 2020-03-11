@@ -19,6 +19,26 @@ export const getMyStats = (currentUser) => {
   }
 }
 
+export const getAllUsersStats = () => {
+  console.log('You hit your Allstats action')
+
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/stats`, {
+      credentials: "include",
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+     },
+    })
+      .then(r => r.json())
+      .then(fetchedAllStats => {
+        console.log('Here are your Allstats!!:', fetchedAllStats)
+        dispatch({ type: 'GET_ALL_STATS', fetchedAllStats})
+      })
+    .catch(console.log)
+  }
+}
+
 export const updateStats = (currentUser, score) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {

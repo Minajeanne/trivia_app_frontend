@@ -15,7 +15,6 @@ const Questions = (props) => {
       correctAnswer = props.question.correct_answer
 
       console.log(correctAnswer)
-// console.log(correctAnswer.replace(/&/gi, ""))
 
       answerChoices = [...props.question.incorrect_answers]
         if (props.question.incorrect_answers.length === 1) {

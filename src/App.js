@@ -7,6 +7,7 @@ import Signup from './components/Signup.js';
 import MyStatsContainer from './components/MyStatsContainer.js';
 import Questions from './components/Questions.js';
 import GameContainer from './components/GameContainer.js';
+import Leaderboard from './components/Leaderboard.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import { Route, Switch, withRouter } from 'react-router-dom';
@@ -36,7 +37,8 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
-    stats: state.myStats
+    stats: state.myStats,
+    allStats: state.allStats
   })
 }
 

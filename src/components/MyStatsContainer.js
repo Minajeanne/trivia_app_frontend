@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getMyStats } from '../actions/myStats.js';
 import { Header, Icon, Grid } from 'semantic-ui-react';
 import Leaderboard from './Leaderboard.js';
-import Rank from './Rank.js';
 
 class MyStatsContainer extends React.Component {
 
@@ -13,7 +12,7 @@ class MyStatsContainer extends React.Component {
 
   render() {
 
-    const userPr = this.props.stats.total_correct
+    const userPr = this.props.stats.user_pr
     const userRank = this.props.stats.user_rank
 
     return (
@@ -99,11 +98,10 @@ class MyStatsContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log('this is state in MyStatsContainer', state)
   return {
     currentUser: state.currentUser,
-    stats: state.myStats.stats
-    // fetchedStats: state.fetchedStats,
-    // userRank: state.myStats.userRank
+    stats: state.myStats.stats,
   }
 }
 

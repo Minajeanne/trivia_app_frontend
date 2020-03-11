@@ -28,7 +28,7 @@ class GameContainer extends React.Component {
   // componentDidUpdate(prevProps, prevState) {
   //   if (prevState.inProgress !== this.state.inProgress) {
   //     this.setState({ inProgress: false })
-  //     debugger
+  //     
   //   }
   // }
   nextQuestion = () => {
