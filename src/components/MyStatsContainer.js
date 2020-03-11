@@ -13,7 +13,6 @@ class MyStatsContainer extends React.Component {
   }
 
   render() {
-
     const userPr = this.props.stats.user_pr
     const userRank = this.props.stats.user_rank
 
@@ -68,10 +67,9 @@ class MyStatsContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('this is state in MyStatsContainer', state)
   return {
     currentUser: state.currentUser,
-    stats: state.myStats.stats,
+    stats: state.myStats.stats
   }
 }
 

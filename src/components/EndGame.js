@@ -1,4 +1,3 @@
-// functional component
 import React from 'react';
 import { Message, Button, Icon } from 'semantic-ui-react';
 

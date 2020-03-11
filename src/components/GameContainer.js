@@ -25,12 +25,7 @@ class GameContainer extends React.Component {
     inProgress: true,
     answer: ''
   }
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.inProgress !== this.state.inProgress) {
-  //     this.setState({ inProgress: false })
-  //     
-  //   }
-  // }
+
   nextQuestion = () => {
     this.setState(prevState => ({ questionIndex: prevState.questionIndex + 1 }))
   }
@@ -50,7 +45,6 @@ class GameContainer extends React.Component {
     const { questions } = this.props
     const newQuestions = randomQuestionNumbers(questions)
     const { userStats } = this.state.questionIndex
-    // const cutQuestions = questions.replace(/&quote;/gi, "")
 
     if (this.state.inProgress === true) {
       return <Questions
@@ -96,9 +90,7 @@ class GameContainer extends React.Component {
   }
 }
 
-
 const mapStateToProps = state => {
-  console.log("This is state in GameContainer", state)
   return {
     currentUser: state.currentUser,
     questions: state.questions.questions,

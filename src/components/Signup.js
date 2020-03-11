@@ -62,7 +62,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { updateSignupForm, signup })(Signup);
-// error={{
-//   content: 'Please enter a valid password',
-//   pointing: 'below',
-// }}

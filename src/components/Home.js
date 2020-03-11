@@ -12,14 +12,14 @@ const Home = () => (
         textAlign="center"
         style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "60px"}}
         >
-        <Header.Content>
-          TRIVIA APP
-            <Header.Subheader>
-              <strong>Let's Play!</strong>
-            </Header.Subheader>
-        </Header.Content>
-      </Header>
-    </Container>
+          <Header.Content>
+            TRIVIA APP
+              <Header.Subheader>
+                <strong>Let's Play!</strong>
+              </Header.Subheader>
+          </Header.Content>
+        </Header>
+      </Container>
     <div>
       <Login />
     </div>
@@ -27,4 +27,3 @@ const Home = () => (
 );
 
 export default Home;
-  // <Link to="/login">Log In</Link> or <Link to="/signup">Sign Up</Link>

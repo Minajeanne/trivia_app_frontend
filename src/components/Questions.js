@@ -1,6 +1,5 @@
-// functional component
 import React from 'react';
-import { Button, Segment, Header, Icon, Divider, Transition } from 'semantic-ui-react';
+import { Button, Segment, Header, Icon, Divider } from 'semantic-ui-react';
 
 const Questions = (props) => {
   let answerChoices = []

@@ -1,10 +1,8 @@
-
 export default (state = {questions: []}, action) => {
-    switch(action.type) {
-        case 'FETCH_QUESTIONS':
-          console.log('json', action.fetchedQuestions.results)
-            return {questions: action.fetchedQuestions.results};
-        default:
-            return state;
-    }
+  switch(action.type) {
+    case 'FETCH_QUESTIONS':
+      return {questions: action.fetchedQuestions.results};
+    default:
+      return state;
+  }
 }

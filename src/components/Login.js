@@ -5,7 +5,6 @@ import { login } from '../actions/currentUser.js';
 import { Link } from 'react-router-dom';
 import { Form, Divider, Segment, Grid, Icon, Button } from 'semantic-ui-react';
 import Signup from './Signup.js';
-// import PropTypes from 'prop-types'
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
@@ -33,12 +32,12 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
             style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
             >
             <Form.Input
-            icon="user"
-            iconPosition="left"
-            label="Username"
-            name="username"
-             value={loginFormData.username}
-             onChange={handleInputChange}
+              icon="user"
+              iconPosition="left"
+              label="Username"
+              name="username"
+               value={loginFormData.username}
+               onChange={handleInputChange}
           />
           <Form.Input
             icon="lock"

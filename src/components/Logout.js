@@ -12,15 +12,13 @@ const Logout = ({ logout, history }) => {
       circular icon="sign-out"
       style={{ fontFamily: "Shadows Into Light, cursive", color: "red"}}
       content="Log Out"
-      onClick={(e) => {e.preventDefault()
-        logout()
-        history.push('/')
-      }
-    }>
+        onClick={(e) => {e.preventDefault()
+          logout()
+          history.push('/')
+        }
+      }>
     </Button>
   )
 }
 
 export default withRouter(connect(null, { logout } )(Logout));
-
-    // <Form.Button content="Log Out" value="Log Out"/>
