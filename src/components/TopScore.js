@@ -1,0 +1,27 @@
+import React from 'react';
+
+const TopScore = (props) => {
+
+  return (
+    <div
+        as="h2"
+        textAlign="left"
+        style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "30px" }}
+        block
+        >
+        Your Top Score
+          {
+            props.userPr ?
+            <div className="main-number" style={{color: "black", fontSize: "30px"}}>
+                {props.userPr}
+            </div>
+          :
+            <div style={{color: "black", fontSize: "30px"}}>
+                You've yet to answer any questions correctly!
+            </div>
+          }
+      </div>
+    )
+  }
+
+export default TopScore;
