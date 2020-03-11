@@ -8,6 +8,7 @@ import MyStatsContainer from './components/MyStatsContainer.js';
 import Questions from './components/Questions.js';
 import GameContainer from './components/GameContainer.js';
 import Leaderboard from './components/Leaderboard.js';
+import Rank from './components/Rank.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import { Route, Switch, withRouter } from 'react-router-dom';
