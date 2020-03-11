@@ -14,6 +14,7 @@ class MyStatsContainer extends React.Component {
   render() {
 
     const userPr = this.props.stats.total_correct
+    const userRank = this.props.stats.user_rank
 
     return (
       <div>
@@ -55,10 +56,26 @@ class MyStatsContainer extends React.Component {
                 style={{ fontFamily: "Shadows Into Light, cursive", color: "purple", fontSize: "30px" }}
                 block
                 >
-                <Icon name="chess queen" />
-                <Header.Content>
-                  Your Rank
-                </Header.Content>
+                  <Icon name="chess queen" />
+                    <Header.Content>
+                      Your Rank
+                        <div
+                          className="main-number"
+                          style={{color: "black", fontSize: "30px"}}
+                          >
+                          {userRank ?
+                            <div>
+                                {userRank}
+                            </div>
+                          :
+                            <div
+                              className="subtext"
+                              >
+                                Start playing to earn your rank!
+                            </div>
+                          }
+                        </div>
+                    </Header.Content>
               </Header>
             </Grid.Column>
             <Grid.Column width={5}>
@@ -68,10 +85,10 @@ class MyStatsContainer extends React.Component {
                 style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
                 block
                 >
-                <Icon name="trophy" />
-                <Header.Content>
-                  <Leaderboard />
-                </Header.Content>
+                  <Icon name="trophy" />
+                    <Header.Content>
+                      <Leaderboard />
+                    </Header.Content>
               </Header>
             </Grid.Column>
           </Grid.Row>

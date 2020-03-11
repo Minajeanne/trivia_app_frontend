@@ -35,22 +35,20 @@ const Questions = (props) => {
               textAlign="left"
               style={{ display: 'flex',  justifyContent:'center', alignItems:'center', fontFamily: "Shadows Into Light, cursive", color: "black" }}
               >
-
                 <Icon id="spinning" name="cog" size="small"/>
-
-            <Header.Content>
-              Category:
-                <Header.Subheader>{ props.question.category }</Header.Subheader>
-            </Header.Content>
+                  <Header.Content>
+                    Category:
+                      <Header.Subheader>{ props.question.category }</Header.Subheader>
+                  </Header.Content>
           </Header>
             <Header
               as="h1"
               textAlign="center"
               style={{ fontFamily: "Shadows Into Light, cursive", color: "black" }}
               >
-              <Header.Content>
-                { props.question.question }
-              </Header.Content>
+                <Header.Content>
+                  { props.question.question }
+                </Header.Content>
             </Header>
 
             <Divider section />
@@ -61,7 +59,7 @@ const Questions = (props) => {
                 style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
                 value={choice}
                 onClick={handleClick}>
-                { choice }
+                  { choice }
               </Button>
             )
           )
