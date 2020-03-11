@@ -13,22 +13,23 @@ class Leaderboard extends React.Component {
   render() {
 
     const leaderboard = this.props.allStats.allStats
+    const topFive = leaderboard.slice(0,5)
 
     return (
       <div
-          as="h2"
-          textAlign="left"
-          style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
-          block
-          >
-            Leaderboard
-              <td className="main-number" style={{color: "black", fontSize: "30px"}}>
-                <tr>
-                { leaderboard.map((rank, user) => (
-                  <p>{rank.user_rank} - {rank.user.username}</p>
-                ))}
-                </tr>
-              </td>
+        as="h2"
+        textAlign="left"
+        style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
+        block
+        >
+          Leaderboard
+            <td style={{color: "black", fontSize: "28px"}}>
+              <tr>
+              { topFive.map((rank, user) => (
+                <p>{rank.user_rank} - {rank.user.username}</p>
+              ))}
+              </tr>
+            </td>
     </div>
     )
   }
