@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import { Header, Container } from 'semantic-ui-react';
 import Login from './Login.js';
-import Signup from './Signup.js';
 
 const Home = () => (
   <div>

@@ -27,7 +27,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
         <Grid.Column>
           <Form onSubmit={handleSubmit}>
             <Form.Input
-            required
+            requried="true"
             icon="user"
             iconPosition="left"
             label="Username"
@@ -37,7 +37,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
              onChange={handleUserInfoInputChange}
             />
           <Form.Input
-            requried
+            requried="true"
             icon="lock"
             iconPosition="left"
             label="Password"

@@ -5,10 +5,7 @@ import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import MyStatsContainer from './components/MyStatsContainer.js';
-import Questions from './components/Questions.js';
 import GameContainer from './components/GameContainer.js';
-import Leaderboard from './components/Leaderboard.js';
-import Rank from './components/Rank.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import { Route, Switch, withRouter } from 'react-router-dom';
@@ -20,7 +17,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { loggedIn, games } = this.props
+    const { loggedIn } = this.props
     return (
       <div className="App">
        { loggedIn ? <NavBar /> : <Home /> }

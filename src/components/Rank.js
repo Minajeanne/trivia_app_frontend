@@ -7,7 +7,6 @@ const Rank = (props) => {
         as="h2"
         textAlign="left"
         style={{ fontFamily: "Shadows Into Light, cursive", color: "purple", fontSize: "30px" }}
-        block
         >
         Your Rank
           {

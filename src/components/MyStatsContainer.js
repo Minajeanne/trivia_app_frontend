@@ -18,7 +18,7 @@ class MyStatsContainer extends React.Component {
 
     return (
       <div>
-        <Grid celled>
+        <Grid>
           <Grid.Row>
             <Grid.Column width={6}>
               <Header

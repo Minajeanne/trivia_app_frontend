@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Segment, Header, Icon, Divider } from 'semantic-ui-react';
+import { Button, Header, Icon, Divider } from 'semantic-ui-react';
 
 const Questions = (props) => {
   let answerChoices = []

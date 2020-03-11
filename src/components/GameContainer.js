@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Header, Label, Divider, Container } from 'semantic-ui-react';
+import { Header, Label, Container } from 'semantic-ui-react';
 import { updateStats } from '../actions/myStats.js';
 import Questions from './Questions.js';
 import EndGame from './EndGame.js';
-import Leaderboard from './Leaderboard.js';
 
 function randomQuestionNumbers(array) {
   let i = array.length - 1;

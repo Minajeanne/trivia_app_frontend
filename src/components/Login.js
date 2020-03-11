@@ -4,7 +4,6 @@ import { updateLoginForm } from '../actions/loginForm.js';
 import { login } from '../actions/currentUser.js';
 import { Link } from 'react-router-dom';
 import { Form, Divider, Segment, Grid, Icon, Button } from 'semantic-ui-react';
-import Signup from './Signup.js';
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
@@ -51,7 +50,6 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
           <Button
             basic color="green"
             style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
-            content="Log In"
             value="Log In"
             >
               Log In
@@ -62,8 +60,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
       <Grid.Column verticalAlign='middle'>
         <Link to="/signup">
           <Button
-            icon='signup'
-            size='big'
+            size="big"
             basic color="green"
             style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
             >
