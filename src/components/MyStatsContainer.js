@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getMyStats } from '../actions/myStats.js';
 import { Header, Icon, Grid } from 'semantic-ui-react';
 import Leaderboard from './Leaderboard.js';
+import Rank from './Rank.js';
 
 class MyStatsContainer extends React.Component {
 
@@ -57,23 +58,7 @@ class MyStatsContainer extends React.Component {
                 >
                   <Icon name="chess queen" />
                     <Header.Content>
-                      Your Rank
-                        <div
-                          className="main-number"
-                          style={{color: "black", fontSize: "30px"}}
-                          >
-                          {userRank ?
-                            <div>
-                                {userRank}
-                            </div>
-                          :
-                            <div
-                              className="subtext"
-                              >
-                                Start playing to earn your rank!
-                            </div>
-                          }
-                        </div>
+                      <Rank userRank={userRank}/>
                     </Header.Content>
               </Header>
             </Grid.Column>

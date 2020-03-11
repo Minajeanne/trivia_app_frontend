@@ -35,7 +35,6 @@ class Leaderboard extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('this is state in Leaderboard', state)
   return {
     allStats: state.allStats
   }
