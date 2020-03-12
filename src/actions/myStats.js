@@ -39,7 +39,7 @@ export const getAllUsersStats = () => {
   }
 }
 
-export const updateStats = (currentUser, score) => {
+export const updateStats = (currentUser, score, ranking) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {
       credentials: "include",
@@ -47,7 +47,7 @@ export const updateStats = (currentUser, score) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({score})
+      body: JSON.stringify({score, ranking})
     })
       .then(r => r.json())
       .then(r => {
@@ -56,4 +56,22 @@ export const updateStats = (currentUser, score) => {
       }
     )
   }
+}
+export const updateAllUsersStats = (ranking) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/stats`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ranking})
+    })
+      .then(r => r.json())
+      .then(r => {
+        console.log('!!!!!!!!', r)
+        dispatch({type: 'UPDATE_ALL_USERS_STATS', allStats: r})
+      }
+    )
+  };
 }

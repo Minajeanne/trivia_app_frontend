@@ -94,7 +94,8 @@ const mapStateToProps = state => {
     currentUser: state.currentUser,
     questions: state.questions.questions,
     userAnswer: state.questions.correct_answer,
-    userStats: state.questionIndex
+    userStats: state.questionIndex,
+    // newRank: state.newRank
   }
 }
 

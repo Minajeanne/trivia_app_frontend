@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
 import { fetchQuestions } from '../actions/questions.js';
+import { getAllUsersStats } from '../actions/myStats.js';
 import Logout from './Logout.js';
 import MyStatsContainer from './MyStatsContainer.js';
 
-const NavBar = ({ currentUser, loggedIn, fetchQuestions }) => {
+const NavBar = ({ currentUser, loggedIn, fetchQuestions, getAllUsersStats }) => {
 
   return (
     <>
@@ -51,4 +52,4 @@ const mapStateToProps = ({ currentUser }) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchQuestions })(NavBar);
+export default connect(mapStateToProps, { fetchQuestions, getAllUsersStats })(NavBar);
