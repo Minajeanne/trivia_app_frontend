@@ -92,8 +92,7 @@ const mapStateToProps = state => {
   return {
     currentUser: state.currentUser,
     stats: state.myStats.stats,
-    leaderboard: state.allStats.allStats
-    // ranking: state.allStats.allStats
+    leaderboard: state.allStats
   }
 }
 
