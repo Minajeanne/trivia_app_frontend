@@ -2,20 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getMyStats } from '../actions/myStats.js';
 import { getAllUsersStats } from '../actions/myStats.js';
-import { updateAllUsersStats } from '../actions/myStats.js';
+// import { updateAllUsersStats } from '../actions/myStats.js';
 import { Header, Icon, Grid } from 'semantic-ui-react';
 import TopScore from './TopScore.js';
 import Leaderboard from './Leaderboard.js';
 import Rank from './Rank.js';
 
 class MyStatsContainer extends React.Component {
-  state = {
-    ranking: '',
-  }
-debugger
+  // state = {
+  //   leaderboard: this.props.updateAllUsersStats()
+  // };
+
   componentDidMount() {
     this.props.getMyStats(this.props.currentUser);
-      this.props.updateAllUsersStats(this.state.ranking);
+      // this.props.updateAllUsersStats(this.state.ranking);
   }
 
   render() {
@@ -76,7 +76,7 @@ debugger
                 >
                   <Icon name="trophy" />
                     <Header.Content>
-                      // <Leaderboard />
+                      <Leaderboard />
                     </Header.Content>
               </Header>
             </Grid.Column>
@@ -88,11 +88,13 @@ debugger
 }
 
 const mapStateToProps = state => {
+  console.log('state in MyStatsContainer', state)
   return {
     currentUser: state.currentUser,
     stats: state.myStats.stats,
-    ranking: state.allStats.allStats
+    leaderboard: state.allStats.allStats
+    // ranking: state.allStats.allStats
   }
 }
 
-export default connect(mapStateToProps, { getMyStats, getAllUsersStats, updateAllUsersStats })(MyStatsContainer);
+export default connect(mapStateToProps, { getMyStats, getAllUsersStats })(MyStatsContainer);

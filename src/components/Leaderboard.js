@@ -5,39 +5,36 @@ import { getAllUsersStats } from '../actions/myStats.js';
 class Leaderboard extends React.Component {
 
   componentDidMount() {
-    this.props.getAllUsersStats(this.props.allStats)
+    this.props.getAllUsersStats(this.props.allStats.allStats)
   }
 
   render() {
 
     const leaderboard = this.props.allStats.allStats
-    // let topFive = leaderboard.slice(0,3)
-    // debugger
+    debugger
+    let topFive = leaderboard.slice(0,3)
 
     return (
-        // <table
-        //   as="h2"
-        //   textAlign="left"
-        //   style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
-        //   >
-        //   <thead>
-        //     <tr>
-        //       <th>Leaderboard</th>
-        //     </tr>
-        //   </thead>
-        //   <tbody>
-        //     <tr style={{color: "black", fontSize: "28px"}}>
-              // <td>
-              <>
-
-              </>
-              // {topFive.map((rank, user) => (
-              //       <p key={rank.user_id}>{rank.user_rank} - {rank.user.username}</p>
-              //     ))}
-              // </td>
-      //       </tr>
-      //     </tbody>
-      // </table>
+      <table
+        as="h2"
+        textAlign="left"
+        style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
+        >
+        <thead>
+          <tr>
+            <th>Leaderboard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style={{color: "black", fontSize: "28px"}}>
+            <td>
+            {topFive.map((rank, user) => (
+                  <p key={rank.user_id}>{rank.user_rank} - {rank.user.username}</p>
+                ))}
+            </td>
+          </tr>
+        </tbody>
+    </table>
     )
   }
 }

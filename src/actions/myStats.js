@@ -39,7 +39,7 @@ export const getAllUsersStats = () => {
   }
 }
 
-export const updateStats = (currentUser, score, ranking) => {
+export const updateStats = (currentUser, score, leaderboard) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/stats/${currentUser}`, {
       credentials: "include",
@@ -47,7 +47,7 @@ export const updateStats = (currentUser, score, ranking) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({score, ranking})
+      body: JSON.stringify({score, leaderboard})
     })
       .then(r => r.json())
       .then(r => {
@@ -57,21 +57,21 @@ export const updateStats = (currentUser, score, ranking) => {
     )
   }
 }
-export const updateAllUsersStats = (ranking) => {
-  return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/stats`, {
-      credentials: "include",
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ranking})
-    })
-      .then(r => r.json())
-      .then(r => {
-        console.log('!!!!!!!!', r)
-        dispatch({type: 'UPDATE_ALL_USERS_STATS', allStats: r})
-      }
-    )
-  };
-}
+// export const updateAllUsersStats = (leaderboard) => {
+//   return dispatch => {
+//     return fetch(`http://localhost:3001/api/v1/stats`, {
+//       credentials: "include",
+//       method: "PATCH",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify({leaderboard})
+//     })
+//       .then(r => r.json())
+//       .then(r => {
+//         console.log('!!!!!!!!', r)
+//         dispatch({type: 'UPDATE_ALL_USERS_STATS', allStats: r})
+//       }
+//     )
+//   };
+// }
