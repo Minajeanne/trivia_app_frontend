@@ -14,10 +14,7 @@ class Leaderboard extends React.Component {
     let topFive = leaderboard.slice(0,3)
 
     return (
-      <table
-        as="h2"
-        style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
-        >
+      <table style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "40px", textAlign: "centered", fontWeight: "bold"}}>
         <thead>
           <tr>
             <th>Leaderboard</th>
@@ -27,7 +24,7 @@ class Leaderboard extends React.Component {
           <tr style={{color: "black", fontSize: "28px"}}>
             <td>
             {topFive.map((rank, user) => (
-                  <p key={rank.user_id}>#{rank.user_rank}  {rank.user.username}</p>
+                  <p style={{paddingTop: "20px"}} key={rank.user_id}>#{rank.user_rank} {rank.user.username}</p>
                 ))}
             </td>
           </tr>

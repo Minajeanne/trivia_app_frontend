@@ -6,12 +6,12 @@ const Rank = (props) => {
     <div
         as="h2"
         textAlign="left"
-        style={{ fontFamily: "Shadows Into Light, cursive", color: "purple", fontSize: "30px" }}
+        style={{ fontFamily: "Shadows Into Light, cursive", color: "purple", fontSize: "40px", fontWeight: "bold"}}
         >
-        Your Rank
+        Rank
           {
             props.userRank ?
-            <div className="main-number" style={{color: "black", fontSize: "30px"}}>
+            <div className="main-number" style={{color: "black", fontSize: "30px", paddingTop: "20px"}}>
                 {props.userRank}
             </div>
           :

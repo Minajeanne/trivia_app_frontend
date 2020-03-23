@@ -27,28 +27,25 @@ class MyStatsContainer extends React.Component {
         <Grid centered columns={2} padded="vertically" relaxed="very" stackabled="true">
           <Grid.Row>
             <Grid.Column mobile={16} tablet={8} computer={4} textAlign="centered">
-              <Icon name="smile" color="green"/>
-                  <div as="h2" style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "30px" }}>
-                    Your Top Score
-                      {
-                        userPr ?
-                        <div className="main-number" style={{color: "black", fontSize: "30px"}}>
-                            {userPr}
-                        </div>
-                      :
-                        <div style={{color: "black", fontSize: "30px"}}>
-                            You've yet to answer any questions correctly!
-                        </div>
-                      }
-                  </div>
+              <div as="h2" style={{ fontFamily: "Shadows Into Light, cursive", color: "blue", fontSize: "40px", fontWeight: "bold" }}>
+                High Score
+                  {
+                    userPr ?
+                    <div className="main-number" style={{color: "black", fontSize: "30px", paddingTop: "20px"}}>
+                        {userPr}
+                    </div>
+                  :
+                    <div style={{color: "black", fontSize: "30px"}}>
+                        You've yet to answer any questions correctly!
+                    </div>
+                  }
+              </div>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={8} computer={4} textAlign="centered">
-              <Icon name="chess queen" color="purple"/>
-                <Rank userRank={userRank}/>
+              <Rank userRank={userRank}/>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={8} computer={4} textAlign="centered">
-              <Icon name="trophy" color="yellow"/>
-                <Leaderboard />
+              <Leaderboard />
             </Grid.Column>
           </Grid.Row>
         </Grid>
