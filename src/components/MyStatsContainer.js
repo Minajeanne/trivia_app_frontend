@@ -24,61 +24,31 @@ class MyStatsContainer extends React.Component {
 
     return (
       <div>
-        <Grid>
+        <Grid centered columns={2} padded="vertically" relaxed="very" stackabled="true">
           <Grid.Row>
-            <Grid.Column width={6}>
-              <Header
-                as="h2"
-                textAlign="left"
-                style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "30px" }}
-                block
-                >
-                <Icon name="smile" />
-                  <Header.Content>
-                    <div
-                        as="h2"
-                        style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "30px" }}
-                        >
-                        Your Top Score
-                          {
-                            userPr ?
-                            <div className="main-number" style={{color: "black", fontSize: "30px"}}>
-                                {userPr}
-                            </div>
-                          :
-                            <div style={{color: "black", fontSize: "30px"}}>
-                                You've yet to answer any questions correctly!
-                            </div>
-                          }
-                      </div>
-                  </Header.Content>
-                </Header>
+            <Grid.Column mobile={16} tablet={8} computer={4} textAlign="centered">
+              <Icon name="smile" color="green"/>
+                  <div as="h2" style={{ fontFamily: "Shadows Into Light, cursive", color: "green", fontSize: "30px" }}>
+                    Your Top Score
+                      {
+                        userPr ?
+                        <div className="main-number" style={{color: "black", fontSize: "30px"}}>
+                            {userPr}
+                        </div>
+                      :
+                        <div style={{color: "black", fontSize: "30px"}}>
+                            You've yet to answer any questions correctly!
+                        </div>
+                      }
+                  </div>
             </Grid.Column>
-            <Grid.Column width={5}>
-              <Header
-                as="h2"
-                textAlign="left"
-                style={{ fontFamily: "Shadows Into Light, cursive", color: "purple", fontSize: "30px" }}
-                block
-                >
-                  <Icon name="chess queen" />
-                    <Header.Content>
-                      <Rank userRank={userRank}/>
-                    </Header.Content>
-              </Header>
+            <Grid.Column mobile={16} tablet={8} computer={4} textAlign="centered">
+              <Icon name="chess queen" color="purple"/>
+                <Rank userRank={userRank}/>
             </Grid.Column>
-            <Grid.Column width={5}>
-              <Header
-                as="h2"
-                textAlign="left"
-                style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
-                block
-                >
-                  <Icon name="trophy" />
-                    <Header.Content>
-                      <Leaderboard />
-                    </Header.Content>
-              </Header>
+            <Grid.Column mobile={16} tablet={8} computer={4} textAlign="centered">
+              <Icon name="trophy" color="yellow"/>
+                <Leaderboard />
             </Grid.Column>
           </Grid.Row>
         </Grid>

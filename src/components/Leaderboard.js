@@ -11,13 +11,11 @@ class Leaderboard extends React.Component {
   render() {
 
     const leaderboard = this.props.allStats.allStats
-    debugger
     let topFive = leaderboard.slice(0,3)
 
     return (
       <table
         as="h2"
-        textAlign="left"
         style={{ fontFamily: "Shadows Into Light, cursive", color: "gold", fontSize: "30px" }}
         >
         <thead>
@@ -29,7 +27,7 @@ class Leaderboard extends React.Component {
           <tr style={{color: "black", fontSize: "28px"}}>
             <td>
             {topFive.map((rank, user) => (
-                  <p key={rank.user_id}>{rank.user_rank} - {rank.user.username}</p>
+                  <p key={rank.user_id}>#{rank.user_rank}  {rank.user.username}</p>
                 ))}
             </td>
           </tr>

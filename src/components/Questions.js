@@ -23,14 +23,13 @@ const Questions = (props) => {
            rand = Math.floor(Math.random() * 4);
            answerChoices.splice(rand, 0, correctAnswer)
          }
-   }
+    }
 
       return (
         props.question ?
           <div>
             <Header
               as="h1"
-              textAlign="left"
               style={{ display: 'flex',  justifyContent:'center', alignItems:'center', fontFamily: "Shadows Into Light, cursive", color: "black" }}
               >
                 <Icon id="spinning" name="cog" size="small"/>
@@ -38,7 +37,7 @@ const Questions = (props) => {
                     Category:
                       <Header.Subheader>{ props.question.category }</Header.Subheader>
                   </Header.Content>
-          </Header>
+            </Header>
             <Header
               as="h1"
               textAlign="center"
@@ -54,17 +53,16 @@ const Questions = (props) => {
             {answerChoices.map(choice => (
               <Button
                 basic color="green"
+                key={choice.id}
                 style={{ fontFamily: "Shadows Into Light, cursive", fontSize: "25px" }}
                 value={choice}
                 onClick={handleClick}>
                   { choice }
               </Button>
-            )
-          )
-        }
-      </div>
-    : null
-  )
+            ))}
+          </div>
+        : null
+      )
 }
 
 export default Questions;
